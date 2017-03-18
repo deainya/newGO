@@ -10,7 +10,7 @@ body {
   background: white;
   color: #333;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.5;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -68,7 +68,7 @@ Form
 }
 .form-input {
   border: 1px solid #bfc0c0;
-  border-radius: 7px;
+  border-radius: 8px;
   box-sizing: border-box;
   flex-basis: 85%;
   padding: 10px;
@@ -82,10 +82,13 @@ Form
   flex-basis: 15%;
 }
 
-#email.ng-invalid.ng-dirty {
+.ng-invalid.ng-dirty {
   border-color: #f90c63;
 }
-#email.ng-valid.ng-dirty {
+.ng-dirty {
+  border-color: #bfc0c0;
+}
+.ng-valid.ng-dirty {
   border-color: #339900;
 }
 

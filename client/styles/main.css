@@ -82,11 +82,11 @@ Form
   flex-basis: 15%;
 }
 
-.ng-invalid.ng-dirty {
-  border-color: #f90c63;
-}
 .ng-valid.ng-dirty {
   border-color: #339900;
+}
+.ng-invalid.ng-dirty {
+  border-color: #f90c63;
 }
 
 /*-----------------------------------------------

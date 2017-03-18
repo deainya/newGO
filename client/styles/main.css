@@ -109,11 +109,15 @@ Form
   border-color: #f90c63;
 }*/
 
-input[name="email"].ng-valid.ng-dirty {
+/*input[name="email"].ng-valid.ng-dirty {
   border-color: #339900;
-  /*background-color: #e3ffdc;*/
-}
+  background-color: #e3ffdc;
+}*/
 input[name="email"].ng-invalid.ng-dirty {
+  border-color: #f90c63;
+  /*background-color: #ffe3dc;*/
+}
+input[name="phone"].ng-invalid.ng-dirty { /*ng-pristine*/
   border-color: #f90c63;
   /*background-color: #ffe3dc;*/
 }

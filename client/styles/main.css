@@ -81,21 +81,25 @@ Form
 .form-label {
   flex-basis: 15%;
 }
+.form-help {
+  font-size: 16px;
+  color: #f90c63;
+}
 
-.ng-valid-required {
+.ng-valid-required.ng-dirty {
   border-color: #339900;
 }
-.ng-invalid-required.ng-dirty {
+/*.ng-invalid-required.ng-dirty {
   border-color: #f90c63;
-}
+}*/
 
 input[name="email"].ng-valid {
   border-color: #339900;
-  background-color: #e3ffdc;
+  /*background-color: #e3ffdc;*/
 }
 input[name="email"].ng-invalid.ng-dirty {
   border-color: #f90c63;
-  background-color: #ffe3dc;
+  /*background-color: #ffe3dc;*/
 }
 
 /*-----------------------------------------------

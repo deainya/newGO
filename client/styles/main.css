@@ -81,11 +81,12 @@ Form
 .form-label {
   flex-basis: 15%;
 }
-.ng-invalid.ng-dirty {
-  border-color: #f96f6c;
+
+#email.ng-invalid {
+  border-color: #f90c63;
 }
-.ng-valid.ng-dirty {
-  border-color: #6ff999;
+#email.ng-valid {
+  border-color: #339900;
 }
 
 /*-----------------------------------------------

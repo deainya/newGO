@@ -4,16 +4,16 @@
 
 module.exports = {
   port: process.env.port || 3005,
-  secret: 'secretforrfbgoinitiative',
+  'secret': 'secretforrfbgoinitiative',
 
-  smpts: 'smtps://deainru%40gmail.com:mail4deainru@smtp.gmail.com',
-  mail_addresser: '"rfbGO" <rfbGO@deain.ru>',
-  mail_subject: 'Оповещение rfbGO ✔',
+  'smpts': 'smtps://deainru%40gmail.com:mail4deainru@smtp.gmail.com',
+  'mail_addresser': '"rfbGO" <rfbGO@deain.ru>',
+  'mail_subject': 'Оповещение rfbGO ✔',
 
   database: //'mongodb://user:pass@localhost:27017/rfbgo-dev',
             'mongodb://user:pass@localhost:27017/partnergo-dev',
 
-  ExpressInit: function(app, express, bodyParser) {
+  initializeExpress: function(app, express, bodyParser) {
     app.use(bodyParser.json()); // get our request parameters
     app.use(bodyParser.urlencoded({ extended: false }));
     //app.use(express.cookieParser()); // read cookies (needed for auth)

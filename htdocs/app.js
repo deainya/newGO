@@ -4,14 +4,14 @@
 let express     = require('express');
 let app         = express();
 let bodyParser  = require('body-parser'); // to get params from POST requests
-let Config      = require('./config'); // get our config file
-let Mail        = require('./mail'); // to send email
-let Mongo       = require('./mongo'); // get our mongo utils
+let config      = require('./config'); // get our config file
+let mail        = require('./mail'); // to send email
+let mongo       = require('./mongo'); // get our mongo utils
 
 // Initialization            ==================================================
 let jsonParser  = bodyParser.json();
-Config.ExpressInit(app, express, bodyParser); // Load Express Configuration
-Mongo.connect(Config.database); // connecting to MongoDB
+config.initializeExpress(app, express, bodyParser); // Load Express Configuration
+mongo.connect(config.database); // connecting to MongoDB
 
 // API routes                 ==================================================
 let apiRoutes = express.Router(); // get an instance of the router for api routes
@@ -25,4 +25,4 @@ apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
 app.use('/api', apiRoutes);
 
 // Start the server           ==================================================
-app.listen(Config.port, () => console.log( "App is on port: " + Config.port ) );
+app.listen(config.port, () => console.log( "App is on port: " + config.port ) );

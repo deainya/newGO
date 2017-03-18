@@ -7,7 +7,8 @@
     <label class="form-label" for="password">Пароль:</label>
     <input class="form-input" name="password" type="password" required ng-model="user.password"/>
   </div>
-  <input class="btn" type="submit" value="Войти" ng-disabled="formLogin.$invalid" />
+  <div class="form-field">
+    <input class="btn" type="submit" value="Войти" ng-disabled="formLogin.$invalid" />
+    <a ui-sref="register">Регистрация</a>
+  </div>
 </form>
-&nbsp;
-<a ui-sref="register">Регистрация</a>

@@ -10,8 +10,8 @@ module.exports = {
   mail_addresser: '"rfbGO" <rfbGO@deain.ru>',
   mail_subject: 'Оповещение rfbGO ✔',
 
-  database: //'mongodb://user:pass@localhost:27017/rfbgo-dev'
-            'mongodb://user:pass@localhost:27017/partnergo-dev'
+  database: //'mongodb://user:pass@localhost:27017/rfbgo-dev',
+            'mongodb://user:pass@localhost:27017/partnergo-dev',
 
   ExpressInit: function(app, express, bodyParser) {
     app.use(bodyParser.json()); // get our request parameters

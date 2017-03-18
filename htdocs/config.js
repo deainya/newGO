@@ -7,13 +7,8 @@ module.exports = {
   'secret': 'secretforrfbgoinitiative',
 
   //'smpts': 'smtps://deainru%40gmail.com:mail4deainru@smtp.gmail.com',
-  'smtps': {
-    service: 'Gmail',
-    auth: { user: 'deainru', pass: 'mail4deainru' },
-    logger: {}, // hz
-    debug: false // include SMTP traffic in the logs
-  },
-  'defaultfields': {
+  'mailauth': { user: 'deainru', pass: 'mail4deainru' },
+  'maildefaults': {
     from: '"rfbGO" <rfbGO@deain.ru>',
     subject: 'Оповещение rfbGO ✔',
   },

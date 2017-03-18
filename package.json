@@ -17,11 +17,12 @@
     "request": "latest",
     "bcrypt": "latest",
     "body-parser": "latest",
+    "bunyan": "latest",
     "express": "latest",
+    "jsonwebtoken": "latest",
     "mongodb": "latest",
     "mongoose": "latest",
     "morgan": "latest",
-    "jsonwebtoken": "latest",
     "nodemailer": "latest",
     "socket.io": "latest"
   },

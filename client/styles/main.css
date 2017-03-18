@@ -72,11 +72,11 @@ Form
   margin-bottom: 20px;
 }
 .form-input {
-  border: 1px solid #bfc0c0;
+  border: 2px solid #bfc0c0;
   border-radius: 8px;
   box-sizing: border-box;
-  flex-basis: 85%;
-  padding: 10px;
+  flex-basis: 80%;
+  padding: 10px 20px;
   width: 100%;
 }
 .form-input:focus {
@@ -85,8 +85,7 @@ Form
   outline: none;
 }
 .form-label {
-  display: inline-block;
-  /*flex-basis: 15%;*/
+  flex-basis: 20%;
 }
 .form-help {
   display: inline-block;

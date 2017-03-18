@@ -82,10 +82,26 @@ Form
   flex-basis: 15%;
 }
 
-.ng-valid.ng-dirty {
+.ng-valid-required.ng-dirty {
   border-color: #339900;
 }
-.ng-invalid {
+.ng-invalid-required {
+  border-color: #f90c63;
+}
+
+.ng-valid-email.ng-dirty {
+  border-color: #339900;
+  background-color: #ffe3dc;
+}
+.ng-invalid-email {
+  border-color: #f90c63;
+  background-color: #e3ffdc;
+}
+
+.ng-valid-pattern.ng-dirty {
+  border-color: #339900;
+}
+.ng-invalid-pattern {
   border-color: #f90c63;
 }
 

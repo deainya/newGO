@@ -9,10 +9,9 @@ let Mail        = require('./mail'); // to send email
 let Mongo       = require('./mongo'); // get our mongo utils
 
 // Initialization            ==================================================
-Mongo.connect(Config.database); // connecting to MongoDB
 let jsonParser  = bodyParser.json();
-//!!!
-//require('./configExpress')(app, express, bodyParser); // Load Express Configuration
+Config.ExpressInit(app, express, bodyParser); // Load Express Configuration
+Mongo.connect(Config.database); // connecting to MongoDB
 
 // API routes                 ==================================================
 let apiRoutes = express.Router(); // get an instance of the router for api routes

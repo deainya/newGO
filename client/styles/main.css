@@ -25,9 +25,9 @@ sup {
   font-size: 30px;
 }
 a {
-  color: #e90c63;
+  color: #f33336;
   display: inline;
-  text-decoration: none;
+  /*text-decoration: none;*/
 }
 table {
   width: 100%;
@@ -37,7 +37,7 @@ table {
 Logo
 -----------------------------------------------*/
 .logo {
-  color: #000;
+  color: #ffffff; /*#000;*/
   margin-bottom: 0;
 }
 
@@ -45,7 +45,7 @@ Logo
 Header
 -----------------------------------------------*/
 .header {
-  background-color: #ffe3dc;
+  background-color: #e91e63; /*#ffe3dc;*/
   margin-bottom: 40px;
   padding: 40px;
   padding-top: 40px;
@@ -108,9 +108,10 @@ input[name="email"].ng-invalid.ng-dirty {
 Button
 -----------------------------------------------*/
 .btn {
-  background-color: #e90c63; /*#ef8354;*/
+  background-color: #f33336; /*#e90c63; #ef8354;*/
   border: 0;
   border-radius: 8px;
+  box-shadow: 0 3 8px rgba(0,0,0,0.5);
   color: white;
   display: inline-block;
   line-height: 2.5;
@@ -121,7 +122,7 @@ Button
 .btn:active,
 .btn:focus,
 .btn:hover {
-  background-color: #c0093f; /*#d6774e;*/
+  background-color: #c60f03; /*#c0093f; #d6774e;*/
 }
 
 .btn:disabled {

@@ -38,21 +38,17 @@ table {
 }
 
 /*-----------------------------------------------
-Logo
------------------------------------------------*/
-.logo {
-  color: #ffffff; /*#000;*/
-  margin-bottom: 0;
-}
-
-/*-----------------------------------------------
-Header
+Header & Logo
 -----------------------------------------------*/
 .header {
   background-color: #e91e63; /*#ffe3dc;*/
   margin-bottom: 40px;
   padding: 40px;
   padding-top: 40px;
+}
+.logo {
+  color: #ffffff; /*#000;*/
+  margin-bottom: 0;
 }
 
 /*-----------------------------------------------
@@ -61,6 +57,19 @@ Cell
 .cell {
   margin: 0 auto;
   max-width: 900px;
+}
+
+/*-----------------------------------------------
+Infobox
+-----------------------------------------------*/
+.infobox {
+  background-color: #f0f0f0;
+  border: 1px solid #bfc0c0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  flex-basis: 100%;
+  padding: 20px;
+  width: 100%;
 }
 
 /*-----------------------------------------------

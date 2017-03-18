@@ -10,7 +10,7 @@ let transporter = nodemailer.createTransport({
     auth: config.mailauth,
     logger: bunyan.createLogger({ name: 'nodemailer' }),
     debug: false // include SMTP traffic in the logs
-  }, config.maildefaults });
+  }, config.maildefaults);
 
 module.exports = {
   sendMail(mail_to, message, htmlmessage){

@@ -1,0 +1,14 @@
+<form class="form" name="formLogin" ng-submit="Login(user)" novalidate/>
+  <div class="form-field" ng-class="{ 'has-error': formLogin.email.$invalid }">
+    <label class="form-label" for="email">E-mail:</label>
+    <input class="form-input" type="email" id="email" placeholder="user@email.ru" required ng-model="user.email"/>
+    <p class="form-help" ng-show="userForm.email.$invalid && !userForm.email.$pristine">Укажите корректный e-mail адрес.</p>
+  </div>
+  <div class="form-field">
+    <label class="form-label" for="password">Пароль:</label>
+    <input class="form-input" type="password" id="password" required ng-model="user.password"/>
+  </div>
+  <input class="btn" type="submit" value="Войти" ng-disabled="formLogin.$invalid" />
+</form>
+&nbsp;
+<a ui-sref="register">Регистрация</a>

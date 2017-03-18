@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="rfbGO">
+  <head>
+    <meta charset="utf-8">
+    <title>rfbGO beta</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/toastr.css" />
+
+    <link rel="icon" href="images/rfb.png" sizes="32x32" />
+    <link rel="icon" href="images/rfb.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="images/rfb.png" />
+    <meta name="msapplication-TileImage" content="images/rfb.png" />
+
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+    </style>
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="cell">
+        <table>
+          <tr valign="center">
+            <td width="38"><a ui-sref="profile"><img src="images/logo.png"/></a></td>
+            <td><h1 class="logo">&nbsp;rfbGO<sup> beta</sup></h1></td>
+            <td align="right" ng-show="auth.isLoggedIn()" ng-cloak><a ui-sref="profile" > {{user.name}} </a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="cell" ui-view></div>
+
+  </body>
+
+  <script src="md5.js"></script>
+  <script src="bundle.js"></script>
+</html>

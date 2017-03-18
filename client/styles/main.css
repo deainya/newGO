@@ -1,0 +1,79 @@
+/*-----------------------------------------------
+Reset
+-----------------------------------------------*/
+@import url('reset.css');
+
+/*-----------------------------------------------
+Base
+-----------------------------------------------*/
+body {
+  background: white;
+  color: #333;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+h1 {
+  font-size: 50px;
+}
+sup {
+  font-size: 30px;
+}
+a {
+  color: #e90c63;
+  text-decoration: none;
+}
+table {
+  width: 100%;
+}
+
+/*-----------------------------------------------
+Logo
+-----------------------------------------------*/
+.logo {
+  color: #000;
+  margin-bottom: 0;
+}
+
+/*-----------------------------------------------
+Header
+-----------------------------------------------*/
+.header {
+  background-color: #ffe3dc;
+  margin-bottom: 40px;
+  padding: 40px;
+  padding-top: 40px;
+}
+
+/*-----------------------------------------------
+Cell
+-----------------------------------------------*/
+.cell {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/*-----------------------------------------------
+Button
+-----------------------------------------------*/
+.btn {
+  background-color: #e90c63; /*#ef8354;*/
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  line-height: 2.5;
+  padding: 0 40px;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:active,
+.btn:focus,
+.btn:hover {
+  background-color: #c0093f; /*#d6774e;*/
+}

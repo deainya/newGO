@@ -1,0 +1,36 @@
+{
+  "name": "newGO",
+  "version": "1.0.0",
+  "description": "newGO app powered by MEAN stack",
+  "main": "htdocs/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch --gulpfile client/gulpfile.babel.js"
+  },
+  "author": "deainya",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "latest",
+    "angular-resource": "latest",
+    "angular-toastr": "latest",
+    "request": "latest",
+    "bcrypt": "latest",
+    "body-parser": "latest",
+    "express": "latest",
+    "mongodb": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "jsonwebtoken": "latest",
+    "nodemailer": "latest",
+    "socket.io": "latest"
+  },
+  "devDependencies": {
+    "babel-core": "latest",
+    "babel-preset-es2015": "latest",
+    "babelify": "latest",
+    "browserify": "latest",
+    "gulp": "latest",
+    "vinyl-source-stream": "latest"
+  }
+}

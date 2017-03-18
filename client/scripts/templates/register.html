@@ -1,0 +1,31 @@
+<form class="form" name="formRegister" ng-submit="Register(user)"/>
+  <div class="form-field">
+    <input class="form-input" id="name" placeholder="Имя" required ng-model="user.name"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" type="email" id="email" placeholder="E-mail: user@email.ru" required ng-model="user.email"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" type="password" id="password" placeholder="Пароль" required ng-model="user.password"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" type="tel" id="phone" placeholder="Телефон: +X (XXX) XXX-XX-XX" ng-model="user.phone"/>
+  </div>
+  <div class="form-field">
+    <select class="form-input" id="city" required ng-model="user.city" ng-init="user.city = 'Самара'">
+      <option value="Екатеринбург">Екатеринбург</option>
+      <option value="Нижний Тагил">Нижний Тагил</option>
+      <option value="Казань">Казань</option>
+      <option value="Самара">Самара</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <select class="form-input" id="role" required ng-model="user.role" ng-init="user.role = '1'">
+      <option value="0">Консультант банка</option>
+      <option value="1">Партнёр-продавец</option>
+    </select>
+  </div>
+  <input class="btn" type="submit" value="Зарегистрироваться" />
+</form>
+&nbsp;
+<a ui-sref="login">Вход</a>

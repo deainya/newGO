@@ -92,7 +92,7 @@ Form
   outline: none;
 }
 .form-label {
-  display: block;
+  display: inline-block;
   /*lex-basis: 15%;*/
 }
 .form-help {

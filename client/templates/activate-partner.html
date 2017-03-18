@@ -1,0 +1,24 @@
+<div class="infobox">
+  <p>ТЦ {{tradepoint}}</p>
+  <p>Адрес: {{city}}</p>
+  <p>Компания: {{partner}}</p>
+</div>
+<br>
+<form class="form" name="formRegister" ng-submit="Register(user)"/>
+  <div class="form-field">
+    <input class="form-input" name="email" type="email" placeholder="Email" required ng-model="user.email"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" name="password" type="password" placeholder="Пароль" required ng-model="user.password"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" id="name" placeholder="Имя" ng-model="user.name"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ng-model="user.phone"/>
+  </div>
+  <div class="form-field">
+    <input class="btn shadow" type="submit" value="Активировать" ng-disabled="formRegister.$invalid" />
+    <!--&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="login">Вход</a-->
+  </div>
+</form>

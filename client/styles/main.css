@@ -82,27 +82,20 @@ Form
   flex-basis: 15%;
 }
 
-.ng-valid-required.ng-dirty {
+.ng-valid-required {
   border-color: #339900;
 }
-.ng-invalid-required {
+.ng-invalid-required.ng-dirty {
   border-color: #f90c63;
 }
 
-.ng-valid-email.ng-dirty {
+input[name="email"].ng-valid {
   border-color: #339900;
-  background-color: #ffe3dc;
-}
-.ng-invalid-email {
-  border-color: #f90c63;
   background-color: #e3ffdc;
 }
-
-.ng-valid-pattern.ng-dirty {
-  border-color: #339900;
-}
-.ng-invalid-pattern {
+input[name="email"].ng-invalid.ng-dirty {
   border-color: #f90c63;
+  background-color: #ffe3dc;
 }
 
 /*-----------------------------------------------

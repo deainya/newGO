@@ -82,11 +82,12 @@ Form
   flex-basis: 15%;
 }
 .form-help {
+  display: inline-block;
   font-size: 16px;
   color: #e90c63;
 }
 
-.ng-valid-required.ng-dirty {
+.ng-valid-required {
   border-color: #339900;
 }
 /*.ng-invalid-required.ng-dirty {

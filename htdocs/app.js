@@ -25,4 +25,4 @@ apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
 app.use('/api', apiRoutes);
 
 // Start the server           ==================================================
-app.listen(config.port, () => console.log( "App is on port: " + config.port ) );
+app.listen(config.port, () => console.log( "App is on port " + config.port ) );

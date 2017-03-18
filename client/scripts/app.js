@@ -12,7 +12,7 @@ var localStorageFactory = require('./services/localStorage');
 var profileCtrl = require('./controllers/Profile');
 
 angular
-.module('rfbgo', ["ui.router", "ngResource", "toastr"])
+.module('rfbGO', ["ui.router", "ngResource", "toastr"])
 .config(($stateProvider, $urlRouterProvider) => {
   $urlRouterProvider.otherwise('/')
   $stateProvider

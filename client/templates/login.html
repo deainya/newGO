@@ -1,12 +1,13 @@
 <form class="form" name="formLogin" ng-submit="Login(user)" novalidate/>
-  <!--div class="form-field"-->
+  <div class="form-field">
     <label class="form-label" for="email">Email:</label><br>
     <input class="form-input" name="email" type="email" placeholder="user@email.ru" required ng-model="user.email"/>
   <!--/div-->
+  <br>
   <!--div class="form-field"-->
     <label class="form-label" for="password">Пароль:</label><br>
     <input class="form-input" name="password" type="password" required ng-model="user.password"/>
-  <!--/div-->
+  </div>
   <div class="form-field">
     <input class="btn shadow" type="submit" value="Войти" ng-disabled="formLogin.$invalid" />
     &nbsp;<a ui-sref="register">Регистрация</a>

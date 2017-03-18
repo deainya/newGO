@@ -75,7 +75,7 @@ Form
   width: 100%;
 }
 .form-input:focus {
-  border-color: #e90c63;
+  border-color: #0090f0;
   outline: none;
 }
 .form-label {
@@ -83,7 +83,7 @@ Form
 }
 .form-help {
   font-size: 16px;
-  color: #f90c63;
+  color: #e90c63;
 }
 
 .ng-valid-required.ng-dirty {
@@ -93,7 +93,7 @@ Form
   border-color: #f90c63;
 }*/
 
-input[name="email"].ng-valid {
+input[name="email"].ng-valid.ng-dirty {
   border-color: #339900;
   /*background-color: #e3ffdc;*/
 }

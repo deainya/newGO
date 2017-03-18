@@ -2,8 +2,8 @@
   <div class="form-field">
     <label class="form-label" for="email">E-mail:</label>
     <input class="form-input" name="email" type="email" placeholder="user@email.ru" required ng-model="user.email"/>
-    <span class="form-help" ng-show="formLogin.email.$invalid&&!formLogin.email.$pristine"><br>Укажите корректный email.</span>
   </div>
+  <span class="form-help" ng-show="formLogin.email.$invalid&&!formLogin.email.$pristine">Укажите корректный email.</span>
   <div class="form-field">
     <label class="form-label" for="password">Пароль:</label>
     <input class="form-input" name="password" type="password" required ng-model="user.password"/>

@@ -1,7 +1,8 @@
 import angular from 'angular'
-import 'angular-ui-router'
 import 'angular-resource'
 import 'angular-toastr'
+import 'angular-ui-router'
+import 'angular-ui-utils'
 
 var Auth = require('./services/Auth');
 var Session = require('./services/Session');
@@ -12,7 +13,7 @@ var localStorageFactory = require('./services/localStorage');
 var profileCtrl = require('./controllers/Profile');
 
 angular
-.module('rfbGO', ["ui.router", "ngResource", "toastr"])
+.module('rfbGO', ["ngResource", "toastr", "ui.router", "ui.utils"])
 .config(($stateProvider, $urlRouterProvider) => {
   $urlRouterProvider.otherwise('/')
   $stateProvider

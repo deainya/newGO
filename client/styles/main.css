@@ -82,10 +82,10 @@ Form
   flex-basis: 15%;
 }
 
-.ng-valid.ng-dirty {
+.email.ng-valid.ng-dirty {
   border-color: #339900;
 }
-.ng-invalid.ng-dirty {
+.email.ng-invalid.ng-dirty {
   border-color: #f90c63;
 }
 

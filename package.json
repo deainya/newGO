@@ -11,9 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-ui-router": "latest",
     "angular-resource": "latest",
     "angular-toastr": "latest",
+    "angular-ui-router": "latest",
+    "angular-ui-utils": "latest",
     "request": "latest",
     "bcrypt": "latest",
     "body-parser": "latest",

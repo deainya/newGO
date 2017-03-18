@@ -3,10 +3,10 @@
     <input class="form-input" id="name" placeholder="Имя" required ng-model="user.name"/>
   </div>
   <div class="form-field">
-    <input class="form-input" name="email" type="email" id="email" placeholder="E-mail: user@email.ru" required ng-model="user.email"/>
+    <input class="form-input" name="email" type="email" placeholder="Email" required ng-model="user.email"/>
   </div>
   <div class="form-field">
-    <input class="form-input" name="password" type="password" id="password" placeholder="Пароль" required ng-model="user.password"/>
+    <input class="form-input" name="password" type="password" placeholder="Пароль" required ng-model="user.password"/>
   </div>
   <div class="form-field">
     <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ng-model="user.phone"/>
@@ -25,6 +25,8 @@
       <option value="1">Партнёр-продавец</option>
     </select>
   </div>
-  <input class="btn" type="submit" value="Зарегистрироваться" />
-  &nbsp;<a ui-sref="login">Вход</a>
+  <div class="form-field">
+    <input class="btn shadow" type="submit" value="Зарегистрироваться" ng-disabled="formRegister.$invalid" />
+    &nbsp;<a ui-sref="login">Вход</a>
+  </div>
 </form>

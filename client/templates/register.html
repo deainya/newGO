@@ -9,7 +9,7 @@
     <input class="form-input" type="password" id="password" placeholder="Пароль" required ng-model="user.password"/>
   </div>
   <div class="form-field">
-    <input class="form-input" type="tel" id="phone" placeholder="Телефон: +X (XXX) XXX-XX-XX" ng-model="user.phone"/>
+    <input class="form-input" type="tel" id="phone" placeholder="Телефон: +X (XXX) XXX-XX-XX" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/" ng-model="user.phone"/>
   </div>
   <div class="form-field">
     <select class="form-input" id="city" required ng-model="user.city" ng-init="user.city = 'Самара'">

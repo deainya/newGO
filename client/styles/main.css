@@ -109,6 +109,6 @@ Button
   background-color: #c0093f; /*#d6774e;*/
 }
 
-.btn.ng-disabled {
+.btn:disabled {
   background-color: #6f6060;
 }

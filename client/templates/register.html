@@ -1,18 +1,18 @@
 <div class="infobox">
-  <p>{{tradepoint}}</p>
+  <p>ТЦ {{tradepoint}}</p>
   <p>Адрес: {{city}}</p>
-  <p>{{partner}}</p>
+  <p>Компания: {{partner}}</p>
 </div>
-<br><br>
+<br>
 <form class="form" name="formRegister" ng-submit="Register(user)"/>
-  <div class="form-field">
-    <input class="form-input" id="name" placeholder="Имя" required ng-model="user.name"/>
-  </div>
   <div class="form-field">
     <input class="form-input" name="email" type="email" placeholder="Email" required ng-model="user.email"/>
   </div>
   <div class="form-field">
     <input class="form-input" name="password" type="password" placeholder="Пароль" required ng-model="user.password"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" id="name" placeholder="Имя" ng-model="user.name"/>
   </div>
   <div class="form-field">
     <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ng-model="user.phone"/>

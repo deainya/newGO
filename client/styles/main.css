@@ -26,6 +26,7 @@ sup {
 }
 a {
   color: #e90c63;
+  display: inline;
   text-decoration: none;
 }
 table {

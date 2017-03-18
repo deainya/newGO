@@ -82,11 +82,8 @@ Form
   flex-basis: 15%;
 }
 
-.ng-invalid.ng-dirty {
+.ng-invalid {
   border-color: #f90c63;
-}
-.ng-dirty {
-  border-color: #bfc0c0;
 }
 .ng-valid.ng-dirty {
   border-color: #339900;
@@ -110,4 +107,8 @@ Button
 .btn:focus,
 .btn:hover {
   background-color: #c0093f; /*#d6774e;*/
+}
+
+.btn.ng-disabled {
+  background-color: #6f6060;
 }

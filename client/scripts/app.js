@@ -75,13 +75,13 @@ angular
     // Here we simply check if logged in but you can implement more complex logic that inspects the state to see if access is allowed or not
     var act = /activate\/(\w+)/.test(toState.name);
 
-    if(!auth.isLoggedIn()){
-      if (toState.name !== 'login' && toState.name !== 'register' && !act) {
+    /*if(!auth.isLoggedIn()){
+      if (toState.name !== 'login' && toState.name !== 'register') {
         // Redirect to login
         $state.go('login');
         // Prevent state change
         event.preventDefault();
       }
-    }
+    }*/
   });
 })

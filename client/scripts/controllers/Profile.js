@@ -19,7 +19,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
       });
   };
 
-  if(auth.isLoggedIn()){
+  if (auth.isLoggedIn()) {
     $scope.gravatarUrl = Gravatar.generate($rootScope.user.email, 80);
   }
 };

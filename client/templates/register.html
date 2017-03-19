@@ -1,9 +1,32 @@
-<center>
-  <form class="form" name="formOrder" ng-submit="Process('Создать', null, neworder)"/>
-    <input class="btn big shadow" type="submit" value="Позвать консультанта" />
-  </form>
-  <br>
-  Доступно консультантов: {{amount}}
-  <br>
-  Онлайн: {{amount}}
-</center>
+<form class="form" name="formRegister" ng-submit="Register(user)"/>
+  <div class="form-field">
+    <input class="form-input" id="name" placeholder="Имя" required ng-model="user.name"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" name="email" type="email" placeholder="Email" required ng-model="user.email"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" name="password" type="password" placeholder="Пароль" required ng-model="user.password"/>
+  </div>
+  <div class="form-field">
+    <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ui-options="{clearOnBlur: false}" required ng-model="user.phone"/>
+  </div>
+  <div class="form-field">
+    <select class="form-input" name="city" ng-model="user.city" ng-init="user.city = 'Самара'">
+      <option value="Екатеринбург">Екатеринбург</option>
+      <option value="Нижний Тагил">Нижний Тагил</option>
+      <option value="Казань">Казань</option>
+      <option value="Самара">Самара</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <select class="form-input" name="role" ng-model="user.role" ng-init="user.role = '0'">
+      <option value="0">Консультант банка</option>
+      <option value="1">Партнёр-продавец</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <input class="btn shadow" type="submit" value="Зарегистрироваться" ng-disabled="formRegister.$invalid" />
+    &nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="login">Вход</a>
+  </div>
+</form>

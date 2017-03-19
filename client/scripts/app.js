@@ -21,6 +21,19 @@ angular
   .state('home', {
     url: '/'
   })
+  .state('activate', {
+    url: '/activate/:tp',
+    templateUrl: 'templates/activate.html',
+    resolve: {
+      tpService: function($http, $stateParams) {
+        return $http.get(`/api/activate/${$stateParams.tp}`);
+      }
+    },
+    controller: function(tpService){
+      this.tp = tpService.data;
+    },
+    controllerAs: 'tpCtrl'
+  })
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',

@@ -21,7 +21,7 @@ angular
   .state('home', {
     url: '/'
   })
-  .state('activate', {
+  .state('activate.tp', {
     url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
     resolve: {

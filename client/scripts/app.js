@@ -14,8 +14,9 @@ var profileCtrl = require('./controllers/Profile');
 
 angular
 .module('rfbGO', ["ngResource", "toastr", "ui.router", "ui.mask"])
-.config(($stateProvider, $urlRouterProvider) => {
-  $urlRouterProvider.otherwise('/')
+.config(($locationProvider, $stateProvider, $urlRouterProvider) => {
+  $urlRouterProvider
+  .otherwise('/')
   $stateProvider
   .state('home', {
     url: '/'
@@ -35,6 +36,9 @@ angular
     templateUrl: 'templates/profile.html',
     controller: 'profileCtrl'
   })
+  $locationProvider
+  .html5Mode(true)
+  //.hashPrefix('!')
 })
 
 .service('auth', ['$http', 'session', Auth])

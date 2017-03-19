@@ -14,10 +14,10 @@ App is built using MEAN stack
 * `node htdocs/app.js` to run app on server side
 
 ## Seeding MongoDB
-* `mongoimport -u user -p pass --db rfbgo-dev --collection actions --type json --file server/seeds/a-seed.json --jsonArray --drop`
-* `mongoimport -u user -p pass --db rfbgo-dev --collection orders --type json --file server/seeds/o-seed.json --jsonArray --drop`
-* `mongoimport -u user -p pass --db rfbgo-dev --collection tradepoints --type json --file server/seeds/t-seed.json --jsonArray --drop`
-* `mongoimport -u user -p pass --db rfbgo-dev --collection users --type json --file server/seeds/u-seed.json --jsonArray --drop`
+* `mongoimport -u user -p pass --db partnergo-dev --collection actions --type json --file server/seeds/a-seed.json --jsonArray --drop`
+* `mongoimport -u user -p pass --db partnergo-dev --collection orders --type json --file server/seeds/o-seed.json --jsonArray --drop`
+* `mongoimport -u user -p pass --db partnergo-dev --collection tradepoints --type json --file server/seeds/t-seed.json --jsonArray --drop`
+* `mongoimport -u user -p pass --db partnergo-dev --collection users --type json --file server/seeds/u-seed.json --jsonArray --drop`
 
 ## Start/Stop forever server side app (appps/rfbGO/htdocs)
 * `/opt/bitnami/nodejs/bin/node /opt/bitnami/nodejs/bin/forever stop app.js`

@@ -26,7 +26,7 @@ angular
     templateUrl: 'templates/activate.html',
     resolve: {
       tpService: function($http, $stateParams) {
-        return $http.get(`/api/activate/${$stateParams.tp}`);
+        return $http.get(`/activate/${$stateParams.tp}`);
       }
     },
     controller: function(tpService){

@@ -22,7 +22,7 @@ apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
 //require('./routes/orders')(apiRoutes, jsonParser, Mongo, Mail); // orders routes
 
 // Apply the API routes       ==================================================
-//app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 
 // Start the server           ==================================================
 app.listen(config.port, () => console.log( "App is on port " + config.port ) );

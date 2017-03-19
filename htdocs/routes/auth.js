@@ -12,11 +12,12 @@ mongoose.Promise = global.Promise; // WTF???
 
 module.exports = function(app, apiRoutes) {
   // new way
-  apiRoutes.get('/activate/:tp', (req, res) => {
+  app.get('/activate/:tp', (req, res) => {
     var tradepoint = req.params.tp;
     console.log(tradepoint);
 //app.get("/sports/:name", (request, response) => {
 //let sportName = request.params.name;
+
 
 
   });

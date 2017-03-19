@@ -17,7 +17,7 @@ module.exports = function(app, apiRoutes) {
     console.log(tradepoint);
 //app.get("/sports/:name", (request, response) => {
 //let sportName = request.params.name;
-
+    res.sendStatus(200);
 
 
   });

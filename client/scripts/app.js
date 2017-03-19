@@ -21,7 +21,7 @@ angular
   .state('home', {
     url: '/'
   })
-  .state('activate.tp', {
+  .state('activate', {
     url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
     resolve: {
@@ -49,8 +49,8 @@ angular
     templateUrl: 'templates/profile.html',
     controller: 'profileCtrl'
   })
-  $locationProvider
-  .html5Mode(true)
+  //$locationProvider
+  //.html5Mode(true)
   //.hashPrefix('!')
 })
 
@@ -73,8 +73,10 @@ angular
   // Listen for state changes when using ui-router
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // Here we simply check if logged in but you can implement more complex logic that inspects the state to see if access is allowed or not
+    var act = /activate\/(\w+)/.test(toState.name);
+
     if(!auth.isLoggedIn()){
-      if (toState.name !== 'login' && toState.name !== 'register') {
+      if (toState.name !== 'login' && toState.name !== 'register' && !act) {
         // Redirect to login
         $state.go('login');
         // Prevent state change

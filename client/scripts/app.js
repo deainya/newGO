@@ -34,9 +34,11 @@ angular
       }
     },
     controller: function(tpService, $scope){
-      this.tp = tpService.data;
-      console.log(this.tp);
-      $scope.tp = this.tp;
+      console.log(tpService.data);
+      $scope.tp = tpService.data;
+
+      //this.tp = tpService.data;
+      //$scope.tp = this.tp;
     },
     controllerAs: 'tpCtrl'
   })

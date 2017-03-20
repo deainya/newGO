@@ -20,7 +20,7 @@ app.get('/activate/:tp', (req, res) => {
 //app.get("/sports/:name", (request, response) => {
 //let sportName = request.params.name;
   //res.sendStatus(200);
-  res.json( [{"tp":"6314СК4121", "name":"ООО Евродизайн", "wp":"063ТС00214", "tradepoint":"Мягкофф", "address":"г. Самара, ул. Революционная, д. 70", "city":"Самара"}] );
+  res.json( [{"tp":"6314СК4121", "name":tradepoint, "wp":"063ТС00214", "tradepoint":"Мягкофф", "address":"г. Самара, ул. Революционная, д. 70", "city":"Самара"}] );
 
 });
 

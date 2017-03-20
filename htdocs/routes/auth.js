@@ -11,6 +11,13 @@ mongoose.connect(Config.database); // connect to MongoDB through Mongoose
 mongoose.Promise = global.Promise; // WTF???
 
 module.exports = function(app, apiRoutes) {
+  // new way ;)
+  app.get('/activate/:tp', (req, res) => {
+    var tradepoint = req.params.tp;
+    console.log(tradepoint);
+    res.json( [{"tp":"6314СК4121", "name":tradepoint, "wp":"063ТС00214", "tradepoint":"Мягкофф", "address":"г. Самара, ул. Революционная, д. 70", "city":"Самара"}] );
+  });
+
   apiRoutes.post('/login', (req, res) => {
     User.findOne({ email: req.body.email }, (err, user) => {
       if (err) throw err;

@@ -33,8 +33,10 @@ angular
         return $http.get(`/activate/${$stateParams.tp}`);
       }
     },
-    controller: function(tpService){
+    controller: function(tpService, $scope){
       this.tp = tpService.data;
+      console.log(this.tp);
+      $scope.tp = this.tp;
     },
     controllerAs: 'tpCtrl'
   })

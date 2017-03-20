@@ -10,6 +10,7 @@ var dataSourceService = require('./services/dataSource');
 var GravatarFactory = require('./services/Gravatar');
 var localStorageFactory = require('./services/localStorage');
 
+var activateCtrl = require('./controllers/Activate');
 var profileCtrl = require('./controllers/Profile');
 
 angular
@@ -24,7 +25,7 @@ angular
   .state('activate', {
     url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
-    resolve: {
+    /*resolve: {
       tpService: function($http, $stateParams) {
         return $http.get(`/activate/${$stateParams.tp}`);
       }
@@ -32,7 +33,8 @@ angular
     controller: function(tpService, $scope){
       $scope.tp = tpService.data;
     },
-    controllerAs: 'tpCtrl'
+    controllerAs: 'tpCtrl'*/
+    controller: 'activateCtrl'
   })
   .state('login', {
     url: '/login',
@@ -60,6 +62,7 @@ angular
 .factory('Gravatar', GravatarFactory)
 .factory('localStorage', ['$window', localStorageFactory])
 
+.controller('activateCtrl', ['$http', '$rootScope', '$scope', '$state', '$stateParams', 'auth', 'toastr', activateCtrl])
 .controller('profileCtrl', ['$rootScope', '$scope', '$state', 'auth', 'dataSource', 'Gravatar', 'toastr', profileCtrl])
 
 .run(function ($rootScope, $state, auth, session) {

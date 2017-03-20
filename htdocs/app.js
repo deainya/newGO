@@ -13,6 +13,16 @@ let jsonParser  = bodyParser.json();
 config.initializeExpress(app, express, bodyParser); // Load Express Configuration
 mongo.connect(config.database); // connecting to MongoDB
 
+// easy activation?
+app.get('/activate/:tp', (req, res) => {
+  let tp = req.params.tp;
+
+  tradepoints.find({"tp":tp}, {"_id":false}).toArray((err, docs) => {
+    if(err) { res.sendStatus(400); }
+    res.json( docs );
+  });
+});
+
 // API routes                 ==================================================
 let apiRoutes = express.Router(); // get an instance of the router for api routes
 require('./routes/auth')(app, apiRoutes); // auth routes

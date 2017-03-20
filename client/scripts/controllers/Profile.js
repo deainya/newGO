@@ -1,6 +1,5 @@
 // User profile controller
 module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravatar, toastr) {
-
   $scope.Login = function(credentials){
     auth.logIn(credentials,
       function(){

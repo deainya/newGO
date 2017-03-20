@@ -1,7 +1,6 @@
-<div class="infobox" ng-repeat="t in tp">
-  <p>ТЦ {{t.tradepoint}}</p>
-  <p>Адрес: {{t.address}}</p>
-  <p>Компания: {{t.name}}</p>
+<div class="infobox" ng-repeat="partner in point">
+  <p>{{partner.name}}</p>
+  <p>ТЦ {{partner.tradepoint}}, {{partner.address}}</p>
 </div>
 <br>
 <form class="form" name="formRegister" ng-submit="Register(user)"/>

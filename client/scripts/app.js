@@ -21,12 +21,12 @@ angular
   .state('home', {
     url: '/'
   })
-  .state('activate', {
+  /*.state('activate', {
     url: '/activate',
     templateUrl: 'templates/activate.html'
-  })
-  .state('activate.go', {
-    url: '/:tp',
+  })*/
+  .state('activate', {
+    url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
     resolve: {
       tpService: function($http, $stateParams) {

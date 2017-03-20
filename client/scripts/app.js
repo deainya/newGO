@@ -22,7 +22,11 @@ angular
     url: '/'
   })
   .state('activate', {
-    url: '/activate/:tp',
+    url: '/activate',
+    templateUrl: 'templates/activate.html'
+  })
+  .state('activate.go', {
+    url: '/:tp',
     templateUrl: 'templates/activate.html',
     resolve: {
       tpService: function($http, $stateParams) {
@@ -50,8 +54,8 @@ angular
     controller: 'profileCtrl'
   })
   $locationProvider
-  .html5Mode(true)
-  //.hashPrefix('!')
+  //.html5Mode(true)
+  .hashPrefix('')
 })
 
 .service('auth', ['$http', 'session', Auth])

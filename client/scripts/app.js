@@ -21,10 +21,6 @@ angular
   .state('home', {
     url: '/'
   })
-  /*.state('activate', {
-    url: '/activate',
-    templateUrl: 'templates/activate.html'
-  })*/
   .state('activate', {
     url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
@@ -36,9 +32,6 @@ angular
     controller: function(tpService, $scope){
       console.log(tpService.data);
       $scope.tp = tpService.data;
-
-      //this.tp = tpService.data;
-      //$scope.tp = this.tp;
     },
     controllerAs: 'tpCtrl'
   })
@@ -83,13 +76,13 @@ angular
     // Here we simply check if logged in but you can implement more complex logic that inspects the state to see if access is allowed or not
     var act = /activate\/(\w+)/.test(toState.name);
 
-    /*if(!auth.isLoggedIn()){
-      if (toState.name !== 'login' && toState.name !== 'register') {
+    if(!auth.isLoggedIn()){
+      if (toState.name !== 'login' && toState.name !== 'register' && !act) {
         // Redirect to login
         $state.go('login');
         // Prevent state change
         event.preventDefault();
       }
-    }*/
+    }
   });
 })

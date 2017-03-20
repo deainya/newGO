@@ -80,7 +80,7 @@ angular
     console.log(!act);
 
     if (!auth.isLoggedIn()) {
-      if (toState.name !== 'login' && toState.name !== 'register' || act) {
+      if (toState.name !== 'login' && toState.name !== 'register' && toState.name !== 'activate') {
         // Redirect to login
         $state.go('login');
         // Prevent state change

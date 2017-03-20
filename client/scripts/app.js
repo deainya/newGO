@@ -73,7 +73,8 @@ angular
   // Listen for state changes when using ui-router
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // Here we simply check if logged in but you can implement more complex logic that inspects the state to see if access is allowed or not
-    var act = /activate\/(\w*)/.test(toState.name);
+    //var act = /activate\/(\w*)/.test(toState.name);
+    var act = /(activate)/.test(toState.name);
     console.log(toState.name);
     console.log(act);
     console.log(!act);

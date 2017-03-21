@@ -16,7 +16,7 @@ mongo.connect(config.database); // connecting to MongoDB
 // easy activation?
 app.get('/activate/:tp', (req, res) => {
   let tp = req.params.tp;
-  let tradepoints = Mongo.tradepoints();
+  let tradepoints = mongo.tradepoints();
 
   tradepoints.find({"tp":tp}, {"_id":false}).toArray((err, docs) => {
     if(err) { res.sendStatus(400); }

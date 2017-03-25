@@ -3,7 +3,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   $scope.Login = function(credentials){
     auth.logIn(credentials,
       function(){
-        $state.go('profile');
+        if ($rootScope.user.role == 1) { $state.go('main'); } else { $state.go('profile'); }
       }, function(data){
         toastr.error('Указан неверный логин или пароль', 'Ой!');
       });

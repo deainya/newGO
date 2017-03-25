@@ -51,6 +51,11 @@ angular
     templateUrl: 'templates/profile.html',
     controller: 'profileCtrl'
   })
+  .state('main', {
+    url: '/main',
+    templateUrl: 'templates/main.html'//,
+    //controller: 'profileCtrl'
+  })
   $locationProvider
   //.html5Mode(true)
   .hashPrefix('')

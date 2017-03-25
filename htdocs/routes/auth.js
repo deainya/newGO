@@ -50,7 +50,7 @@ module.exports = function(app, apiRoutes) {
         name: req.body.name,
         phone: req.body.phone,
         city: req.body.city,
-        tradepoint: {},
+        tradepoint: req.body.tradepoint,
         role: req.body.role
       });
       user.save(function(err, result) {

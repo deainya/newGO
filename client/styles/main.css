@@ -161,3 +161,49 @@ Button
   /*background: #fc0;*/
   box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
 }
+
+/*-----------------------------------------------
+Grid
+-----------------------------------------------*/
+.grid {
+  border-collapse: inherit;
+  width: 100%;
+  /*display: flex;
+  flex-basis: 100%;*/
+}
+.grid thead {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 10px 20px;
+  vertical-align: center;
+  text-align: left;
+}
+.grid th {
+  border-bottom: 1px solid #bfc0c0;
+  padding: 10px 20px;
+  text-align: left;
+}
+.grid td {
+  border-bottom: 1px dashed #bfc0c0;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 10px 20px;
+  vertical-align: center;
+}
+.grid-sub {
+  border: 0px;
+  border-collapse: inherit;
+  border-radius: 8px;
+  width: 100%;
+}
+.grid-sub thead,
+.grid-sub td {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px 20px;
+  vertical-align: center;
+}
+.act:hover {
+  background-color: #ffe3dc;
+  cursor: pointer;
+}

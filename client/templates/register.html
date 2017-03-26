@@ -33,8 +33,8 @@
         <div class="act" ng-click="setTradepoint(point)">
           <table class="grid"><tbody><tr>
             <td>
-              <p ng-show="user.role==0">{{point.wp}}</p>
-              <p ng-show="user.role==1">{{point.name}}</p>
+              <p ng-show="user.role=='0'">{{point.wp}}</p>
+              <p ng-show="user.role=='1'">{{point.name}}</p>
               <p class="comment">ТЦ {{point.tradepoint}}, {{point.address}}</p>
             <td>
           </tr></tbody></table>
@@ -42,12 +42,12 @@
       </div>
       <br>
     </div>
-    <div class="form-input" ng-hide="_tradepoints_set">
+    <div class="form-input" ng-show="_tradepoints_set">
       Выбрано место работы:
       <p>{{user.tradepoint.name}}</p>
       <p class="comment">ТЦ {{user.tradepoint.tradepoint}}, {{user.tradepoint.address}}</p>
     </div>
-    <label class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints(city)">Указать место работы</label>
+    <label class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints()">Указать место работы</label>
     <label class="btn bin shadow" ng-show="_tradepoints==true" ng-click="_tradepoints=false">Отмена</label>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->

@@ -20,7 +20,7 @@
     </select>
   </div>
   <div class="form-field">
-    <select class="form-input" name="role" ng-model="user.role">
+    <select class="form-input" name="role" ng-model="user.role" ng-init="user-role = '0'">
       <option ng-repeat="r in roles" value="{{r.id}}">{{r.name}}</option>
       <!--option value="0">Консультант банка</option> ng-init="user.role = 0"
       <option value="1">Партнёр-продавец</option-->

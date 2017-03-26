@@ -5,7 +5,7 @@ module.exports = function ($log, $rootScope, localStorage) {
   var _accessToken = localStorage.getItem('session.accessToken');
   console.log(_user);
   console.log(_accessToken);
-  if (_user && _token) {
+  if (_user && _accessToken) {
     $rootScope.user = _user;
     $rootScope.user = _accessToken;
   }

@@ -74,6 +74,11 @@ angular
   $rootScope.auth = auth;
   $rootScope.session = session;
 
+  $rootScope.roles = [
+    {id: '0', name: 'Консультант банка'},
+    {id: '1', name: 'Партнёр-продавец'}
+  ];
+
   var _from = new Date(); _from.setHours(0, 0, 0, 0);
   var _to = new Date(); _to.setHours(0, 0, 0, 0); _to.setDate(_to.getDate() + 1);
   $rootScope.filter = {from:_from, to:_to, city:false, status:'Любой'};

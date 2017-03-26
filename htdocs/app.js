@@ -38,6 +38,8 @@ app.get("/users", (req, res) => {
   });
 });
 
+// Socket.io Communication
+io.sockets.on('connection', socket);
 
 // API routes                 ==================================================
 let apiRoutes = express.Router(); // get an instance of the router for api routes
@@ -64,9 +66,6 @@ apiRoutes.get("/tradepoints", (req, res) => {
     });
   }
 });
-
-// Socket.io Communication
-io.sockets.on('connection', socket);
 
 // Apply the API routes       ==================================================
 app.use('/api', apiRoutes);

@@ -72,7 +72,10 @@ angular
 .run(function ($rootScope, $state, auth, session) {
   $rootScope.auth = auth;
   $rootScope.session = session;
-
+  $rootScope.cities = [
+    {id: '0', name: 'Консультант банка'},
+    {id: '1', name: 'Партнёр-продавец'}
+  ];
   $rootScope.roles = [
     {id: '0', name: 'Консультант банка'},
     {id: '1', name: 'Партнёр-продавец'}

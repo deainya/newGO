@@ -53,6 +53,7 @@ module.exports = function(app, apiRoutes) {
         tradepoint: req.body.tradepoint,
         role: req.body.role
       });
+      console.log(user);
       user.save(function(err, result) {
         if (err) { res.status(500).send({ success: false, message: err.message }); }
         else {

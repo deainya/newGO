@@ -2,7 +2,7 @@
 module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
   // Init data when service is loaded
   var _user = JSON.parse(localStorage.getItem('session.user'));
-  var _accessToken = JSON.parse(localStorage.getItem('session.accessToken'));
+  var _accessToken = localStorage.getItem('session.accessToken'); //JSON.parse()
   console.log(_user);
   console.log(_accessToken);
   if (_user) { console.log("User exists"); }
@@ -37,7 +37,7 @@ module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
     },
     destroy: function(){
       this.setUser(null);
-      this.setAccessToken(null);
+      this.setAccessToken("");
       console.log("Session destroy");
     }
   }

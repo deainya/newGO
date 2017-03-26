@@ -73,8 +73,10 @@ angular
   $rootScope.auth = auth;
   $rootScope.session = session;
   $rootScope.cities = [
-    {id: '0', name: 'Консультант банка'},
-    {id: '1', name: 'Партнёр-продавец'}
+    {id: '0', name: 'Екатеринбург'},
+    {id: '1', name: 'Казань'},
+    {id: '2', name: 'Нижний Тагил'},
+    {id: '3', name: 'Самара'}
   ];
   $rootScope.roles = [
     {id: '0', name: 'Консультант банка'},

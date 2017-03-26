@@ -12,15 +12,18 @@
     <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ui-options="{clearOnBlur: false}" required ng-model="user.phone"/>
   </div>
   <div class="form-field">
-    <select class="form-input" name="city" ng-model="user.city" ng-init="user.city = 'Самара'">
+    <!--select class="form-input" name="city" ng-model="user.city" ng-init="user.city = 'Самара'">
       <option value="Екатеринбург">Екатеринбург</option>
       <option value="Нижний Тагил">Нижний Тагил</option>
       <option value="Казань">Казань</option>
       <option value="Самара">Самара</option>
+    </select-->
+    <select class="form-input" name="city" ng-model="user.city" ng-options="c.id as c.name for c in cities">
     </select>
   </div>
   <div class="form-field">
-    <select class="form-input" name="role" ng-model="user.role" ng-options="r.id as r.name for r in roles" />
+    <select class="form-input" name="role" ng-model="user.role" ng-options="r.id as r.name for r in roles">
+    </select>
       <!--option ng-repeat="r in roles" value="{{r.id}}">{{r.name}}</option>
       <option value="0">Консультант банка</option> ng-init="user.role = 0"
       <option value="1">Партнёр-продавец</option-->

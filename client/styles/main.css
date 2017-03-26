@@ -71,6 +71,9 @@ Infobox
   padding: 0px 20px;
   width: 100%;
 }
+.comment {
+  font-size: 18px;
+}
 
 /*-----------------------------------------------
 Form
@@ -139,28 +142,22 @@ Button
   padding: 0 40px;
   transition: 0.2s ease-in-out;
 }
-
 .btn:active,
 .btn:focus,
 .btn:hover {
   background-color: #c60f03; /*#c0093f; #d6774e;*/
 }
-
 .btn:disabled {
   background-color: #6f6060;
 }
-
 .big {
   padding: 40px 80px;
 }
-
-/*-----------------------------------------------
-Shadow
------------------------------------------------*/
+.bin {
+  display: inline-block;
+  padding: 0 20px;
+}
 .shadow {
   /*background: #fc0;*/
   box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
-}
-.comment {
-  font-size: 18px;
 }

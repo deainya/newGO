@@ -47,12 +47,8 @@
       <p>{{user.tradepoint.name}}</p>
       <p class="comment">ТЦ {{user.tradepoint.tradepoint}}, {{user.tradepoint.address}}</p>
     </div>
-    <form class="formx" name="TradepointForm" ng-hide="_tradepoints==true" ng-submit="getTradepoints(city)"/>
-      <input class="btnx" type="submit" value="Указать место работы"/>
-    </form>
-    <form class="formx" ng-show="_tradepoints==true" ng-submit="_tradepoints=false"/>
-      <input class="btnx" type="submit" value="Отмена"/>
-    </form>
+    <a class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints(city)">Указать место работы</a>
+    <a class="btn bin shadow" ng-show="_tradepoints==true" ng-click="_tradepoints=false">Отмена</a>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">

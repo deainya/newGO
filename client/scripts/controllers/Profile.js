@@ -18,6 +18,18 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
       });
   };
 
+  $scope.setTradepoint = function(obj){
+    $rootScope.user.tradepoint = obj;
+    $state.reload();
+  };
+
+  $scope.getTradepoints = function(){
+    $scope._tradepoints = true;
+    dataSource.get('/api/tradepoints', {city: $rootScope.user.city, role: $rootScope.user.role}).then(function(res) {
+      $scope.points = res.data;
+    });
+  };
+
   if (auth.isLoggedIn()) {
     $scope.gravatarUrl = Gravatar.generate($rootScope.user.email, 80);
   }

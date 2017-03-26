@@ -8,6 +8,10 @@ let config      = require('./config'); // get our config file
 let mail        = require('./mail'); // to send email
 let mongo       = require('./mongo'); // get our mongo utils
 
+let socket      = require('./routes/socket.js');
+let server      = require('http').Server(app);
+let io          = require('socket.io')(server); // Hook socket.io into Express
+
 // Initialization            ==================================================
 let jsonParser  = bodyParser.json();
 config.initializeExpress(app, express, bodyParser); // Load Express Configuration
@@ -59,6 +63,9 @@ apiRoutes.get("/tradepoints", (req, res) => {
     });
   }
 });
+
+// Socket.io Communication
+io.sockets.on('connection', socket);
 
 // Apply the API routes       ==================================================
 app.use('/api', apiRoutes);

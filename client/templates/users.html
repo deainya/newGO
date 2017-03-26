@@ -1,5 +1,5 @@
-<h2>Консоль</h2><br>
-<table class="grid" ng-show="user.role==3">
+<h2>Пользователи</h2><br>
+<table class="grid">
   <thead>
     <tr>
       <th width="25%">name</th>
@@ -16,8 +16,8 @@
         <tr>
           <td width="25%">{{ u.name }} &nbsp;</td>
           <td width="25%">{{ u.email }}&nbsp;</td>
-          <td width="25%" ng-show="u.role==0">{{ u.tradepoint.tp }} &nbsp;</td>
-          <td width="25%" ng-show="u.role==1">{{ u.tradepoint.wp }} &nbsp;</td>
+          <td width="25%" ng-show="u.role==0">{{ u.tradepoint.tp }} {{ u.tradepoint.tradepoint }} &nbsp;</td>
+          <td width="25%" ng-show="u.role==1">{{ u.tradepoint.wp }} {{ u.tradepoint.tradepoint }} &nbsp;</td>
           <td width="25%"> {{ u.role }} </td>
         </tr>
       </tbody>
@@ -28,8 +28,8 @@
       <tbody>
         <tr>
           <td width="33%"> {{ u.phone }} </td>
-          <td width="33%"> {{ u.tradepoint.tradepoint }} </td>
-          <td width="34%"> {{ u.tradepoint.name }} </td>
+          <td width="33%"> {{ u.tradepoint.name }} </td>
+          <td width="34%"> {{ u.tradepoint.address }} </td>
         </tr>
         <tr>
           <td colspan="3" width="100%">Адрес: {{ u.tradepoint.address }} </td>

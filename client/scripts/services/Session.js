@@ -11,10 +11,8 @@ module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
     console.log(jwtHelper.getTokenExpirationDate(_accessToken));
     if (!jwtHelper.isTokenExpired(_accessToken)) {
       $rootScope.user = _user;
-      $rootScope.user = _accessToken;
+      $rootScope.accessToken = _accessToken;
       console.log($rootScope.user);
-      console.log($rootScope.user.role);
-      console.log($rootScope.user.city);
     }
   }
 

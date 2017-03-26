@@ -26,6 +26,35 @@
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
+  <div class="cell">
+    <div class="cell" ng-show="_tradepoints==true">
+      Выберите место работы из списка:
+      <div class="cell" ng-repeat="point in points">
+        <div class="act" ng-click="setTradepoint(point)">
+          <table class="grid"><tbody><tr>
+            <td>
+              <p ng-show="user.role==0">{{point.wp}}</p>
+              <p ng-show="user.role==1">{{point.name}}</p>
+              <p class="comment">ТЦ {{point.tradepoint}}, {{point.address}}</p>
+            <td>
+          </tr></tbody></table>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div class="form-input" ng-hide="_tradepoints">
+      Выбрано место работы:
+      <p>{{user.tradepoint.name}}</p>
+      <p class="comment">ТЦ {{user.tradepoint.tradepoint}}, {{user.tradepoint.address}}</p>
+    </div>
+    <form class="formx" name="TradepointForm" ng-hide="_tradepoints==true" ng-submit="getTradepoints(city)"/>
+      <input class="btnx" type="submit" value="Указать место работы"/>
+    </form>
+    <form class="formx" ng-show="_tradepoints==true" ng-submit="_tradepoints=false"/>
+      <input class="btnx" type="submit" value="Отмена"/>
+    </form>
+  </div>
+  <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">
     <input class="btn shadow" type="submit" value="Зарегистрироваться" ng-disabled="formRegister.$invalid" />
     &nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="login">Вход</a>

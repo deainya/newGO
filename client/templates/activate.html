@@ -1,7 +1,13 @@
 <div class="infobox" ng-repeat="partner in point">
-  <p>{{partner.name}}</p>
-  <i class="material-icons" style="font-size:48px;color:#ffffff;">info</i>
-  <p class="comment">ТЦ {{partner.tradepoint}}, {{partner.address}}</p>
+  <table>
+    <tr valign="center">
+      <td>
+        <p>{{partner.name}}</p>
+        <p class="comment">ТЦ {{partner.tradepoint}}, {{partner.address}}</p>
+      </td>
+      <td><i class="material-icons" style="font-size:64px;">info</i></td>
+    </tr>
+  </table>
 </div>
 <br>
 <form class="form" name="formRegister" ng-submit="Activate(user)"/>
@@ -19,6 +25,5 @@
   </div>
   <div class="form-field">
     <input class="btn shadow" type="submit" value="Активировать" ng-disabled="formRegister.$invalid" />
-    <!--&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="login">Вход</a-->
   </div>
 </form>

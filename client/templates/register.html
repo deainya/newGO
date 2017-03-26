@@ -42,13 +42,13 @@
       </div>
       <br>
     </div>
-    <div class="form-input" ng-hide="_tradepoints">
+    <div class="form-input" ng-hide="_tradepoints_set">
       Выбрано место работы:
       <p>{{user.tradepoint.name}}</p>
       <p class="comment">ТЦ {{user.tradepoint.tradepoint}}, {{user.tradepoint.address}}</p>
     </div>
-    <a class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints(city)">Указать место работы</a>
-    <a class="btn bin shadow" ng-show="_tradepoints==true" ng-click="_tradepoints=false">Отмена</a>
+    <label class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints(city)">Указать место работы</label>
+    <label class="btn bin shadow" ng-show="_tradepoints==true" ng-click="_tradepoints=false">Отмена</label>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">

@@ -1,11 +1,11 @@
 <div class="infobox" ng-repeat="partner in point">
   <table>
     <tr valign="center">
-      <td>{{partner.name}}</td>
-      <td colspan=2><i class="material-icons" style="font-size:64px;">info</i></td>
-    </tr>
-    <tr valign="center">
-      <td class="comment">ТЦ {{partner.tradepoint}}, {{partner.address}}</td>
+      <td>
+        <p>{{partner.name}}</p>
+        <p class="comment">ТЦ {{partner.tradepoint}}, {{partner.address}}</p>
+      </td>
+      <td align="right"><i class="material-icons" style="font-size:48px;">info</i></td>
     </tr>
   </table>
 </div>

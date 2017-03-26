@@ -32,6 +32,24 @@ apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
 //require('./routes/users')(apiRoutes, jsonParser, Mongo, Mail); // users routes
 //require('./routes/orders')(apiRoutes, jsonParser, Mongo, Mail); // orders routes
 
+apiRoutes.get("/tradepoints", (req, res) => {
+  let city = req.query.city || {};
+  let role = req.query.role || {};
+  let tradepoints = mongo.tradepoints();
+
+  if (role == 0) {
+    tradepoints.aggregate([{$match : {"city":city}}, {$group : { _id : "$wp", wp:{$first:"$wp"}, tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((err, docs) => {
+      if(err) { res.sendStatus(400); }
+      res.json( docs );
+    });
+  } else if (role == 1) {
+    tradepoints.find({"city":city}, {"_id":false}).toArray((err, docs) => {
+      if(err) { res.sendStatus(400); }
+      res.json( docs );
+    });
+  }
+});
+
 // Apply the API routes       ==================================================
 app.use('/api', apiRoutes);
 

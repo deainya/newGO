@@ -6,17 +6,13 @@ module.exports = function ($http, $rootScope, $scope, $state, $stateParams, auth
   });
 
   $scope.Activate = function(credentials){
-    var obj = credentials || {};
-
     console.log("point");
-    console.log($scope.point);
-
-    angular.extend(obj, {city: $scope.point.city, tradepoint: $scope.point, role: 1});
-
+    console.log($scope.point[0]);
+    angular.extend(credentials, {city: $scope[0].point.city, tradepoint: $scope[0].point, role: 1});
     console.log("obj");
-    console.log(obj);
+    console.log(credentials);
 
-    auth.Register(obj,
+    auth.Register(credentials,
       function(){
         $state.go('main');
       }, function(data){

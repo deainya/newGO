@@ -27,7 +27,10 @@ app.get('/activate/:tp', (req, res) => {
 app.get("/users", (req, res) => {
   let users = mongo.users();
 
-  users.find({}, (err, docs) => { if(err) { res.sendStatus(400); } res.json(docs); });
+  users.find({}, (err, docs).toArray((err, docs => {
+    if(err) { res.sendStatus(400); }
+    res.json( docs );
+  });
 });
 
 

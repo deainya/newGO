@@ -1,6 +1,6 @@
 // services/localStorage.js
 module.exports = function ($rootScope) {
-  var socket = io.connect();
+  var socket = io.connect('http://localhost');
   return {
     on: function (eventName, callback) {
       socket.on(eventName, function () {

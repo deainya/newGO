@@ -23,6 +23,13 @@ app.get('/activate/:tp', (req, res) => {
     res.json( docs );
   });
 });
+// admin console
+app.get("/users", (req, res) => {
+  let users = mongo.users();
+
+  users.find({}, (err, docs) => { if(err) { res.sendStatus(400); } res.json(docs); });
+});
+
 
 // API routes                 ==================================================
 let apiRoutes = express.Router(); // get an instance of the router for api routes

@@ -9,7 +9,7 @@ module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
   if (_accessToken) { console.log("Token exists"); }
   if (_user && _accessToken) {
     console.log(jwtHelper.getTokenExpirationDate(_accessToken));
-    if (!(jwtHelper.isTokenExpired(_accessToken)) {
+    if (!jwtHelper.isTokenExpired(_accessToken)) {
       $rootScope.user = _user;
       $rootScope.user = _accessToken;
 

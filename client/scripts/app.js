@@ -13,6 +13,7 @@ var localStorageFactory = require('./services/localStorage');
 
 var activateCtrl = require('./controllers/Activate');
 var profileCtrl = require('./controllers/Profile');
+var usersCtrl = require('./controllers/Users');
 
 angular
 .module('rfbGO', ["angular-jwt", "ngResource", "toastr", "ui.router", "ui.mask"])
@@ -48,6 +49,11 @@ angular
     templateUrl: 'templates/main.html'//,
     //controller: 'profileCtrl'
   })
+  .state('users', {
+    url: '/users',
+    templateUrl: 'templates/users.html',
+    controller: 'usersCtrl'
+  })
   $locationProvider
   //.html5Mode(true)
   .hashPrefix('')
@@ -61,6 +67,7 @@ angular
 
 .controller('activateCtrl', ['$http', '$rootScope', '$scope', '$state', '$stateParams', 'auth', 'toastr', activateCtrl])
 .controller('profileCtrl', ['$rootScope', '$scope', '$state', 'auth', 'dataSource', 'Gravatar', 'toastr', profileCtrl])
+.controller('usersCtrl', ['$rootScope', '$scope', '$state', 'dataSource', usersCtrl])
 
 .run(function ($rootScope, $state, auth, session) {
   $rootScope.auth = auth;

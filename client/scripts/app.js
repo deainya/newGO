@@ -71,11 +71,11 @@ angular
     {id: '1', name: 'Партнёр-продавец'}
   ];
 
-  var _from = new Date(); _from.setHours(0, 0, 0, 0);
+  var _from = new Date();
+  console.log(_from);
+  _from.setHours(0, 0, 0, 0);
   var _to = new Date(); _to.setHours(0, 0, 0, 0); _to.setDate(_to.getDate() + 1);
   $rootScope.filter = {from:_from, to:_to, city:false, status:'Любой'};
-
-  console.log($rootScope.filter.from);
 
   // Listen for state changes when using ui-router
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){

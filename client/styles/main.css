@@ -26,6 +26,7 @@ sup {
 }
 a {
   color: #f33336;
+  cursor: pointer;
   /*text-decoration: none;*/
 }
 a:active,

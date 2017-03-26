@@ -1,4 +1,5 @@
 import angular from 'angular'
+import 'angular-jwt'
 import 'angular-resource'
 import 'angular-toastr'
 import 'angular-ui-router'
@@ -14,7 +15,7 @@ var activateCtrl = require('./controllers/Activate');
 var profileCtrl = require('./controllers/Profile');
 
 angular
-.module('rfbGO', ["ngResource", "toastr", "ui.router", "ui.mask"])
+.module('rfbGO', ["angular-jwt", "ngResource", "toastr", "ui.router", "ui.mask"])
 .config(($locationProvider, $stateProvider, $urlRouterProvider) => {
   $urlRouterProvider
   .otherwise('/')
@@ -25,15 +26,6 @@ angular
   .state('activate', {
     url: '/activate/:tp',
     templateUrl: 'templates/activate.html',
-    /*resolve: {
-      tpService: function($http, $stateParams) {
-        return $http.get(`/activate/${$stateParams.tp}`);
-      }
-    },
-    controller: function(tpService, $scope){
-      $scope.tp = tpService.data;
-    },
-    controllerAs: 'tpCtrl'*/
     controller: 'activateCtrl'
   })
   .state('login', {
@@ -62,7 +54,7 @@ angular
 })
 
 .service('auth', ['$http', 'session', Auth])
-.service('session', ['$log', '$rootScope', 'localStorage', Session])
+.service('session', ['$log', '$rootScope', 'jwtHelper', 'localStorage', Session])
 .service('dataSource', ['$http', 'session', dataSourceService])
 .factory('Gravatar', GravatarFactory)
 .factory('localStorage', ['$window', localStorageFactory])

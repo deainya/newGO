@@ -15,6 +15,7 @@
     "angular-toastr": "latest",
     "angular-ui-router": "latest",
     "angular-ui-utils": "latest",
+    "angular-jwt": "latest",
     "request": "latest",
     "bcrypt": "latest",
     "body-parser": "latest",

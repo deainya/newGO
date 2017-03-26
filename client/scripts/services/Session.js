@@ -1,11 +1,12 @@
 // services/Session.js
-module.exports = function ($log, $rootScope, localStorage) {
+module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
   // Init data when service is loaded
   var _user = JSON.parse(localStorage.getItem('session.user'));
   var _accessToken = localStorage.getItem('session.accessToken');
   console.log(_user);
   console.log(_accessToken);
-  if (_user && _accessToken) {
+  console.log(jwtHelper.getTokenExpirationDate(_accessToken));
+  if (_user && !jwtHelper.isTokenExpired(_accessToken)) {
     $rootScope.user = _user;
     $rootScope.user = _accessToken;
   }
@@ -30,9 +31,7 @@ module.exports = function ($log, $rootScope, localStorage) {
     destroy: function(){
       this.setUser(null);
       this.setAccessToken(null);
-      console.log("session destroy");
-      console.log($rootScope.user);
-      console.log($rootScope.accessToken);
+      console.log("Session destroy");
     }
   }
 };

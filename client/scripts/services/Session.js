@@ -28,6 +28,8 @@ module.exports = function ($log, $rootScope, localStorage) {
     destroy: function(){
       this.setUser(null);
       this.setAccessToken(null);
+      console.log($rootScope.user);
+      console.log($rootScope.accessToken);
     }
   }
 };

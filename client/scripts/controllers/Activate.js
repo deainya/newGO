@@ -3,12 +3,15 @@ module.exports = function ($http, $rootScope, $scope, $state, $stateParams, auth
 
   $http.get(`/activate/${$stateParams.tp}`).then(function(res) {
     $scope.point = res.data;
-  });;
+    console.log($scope.point);
+  });
 
   $scope.Activate = function(credentials){
     angular.extend(credentials, {city:$scope.point.city});
     angular.extend(credentials, {tradepoint:$scope.point});
     angular.extend(credentials, {role: 1}); // партнёр
+
+    console.log(credentials);
 
     auth.Register(credentials,
       function(){

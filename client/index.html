@@ -28,8 +28,9 @@
           <tr valign="center">
             <!--td width="38"><a ui-sref="profile"><img src="images/logo.png"/></a>&nbsp;</td-->
             <td><h1 class="logo">rfbGO<sup> beta</sup></h1></td>
-            <td align="right" ng-show="auth.isLoggedIn()" ng-cloak><a ui-sref="profile" > {{user.name}} </a></td>
-            <td align="right" class="material-icons" style="font-size:48px;">account_box</td>
+            <td align="right" ng-show="auth.isLoggedIn()" ng-cloak>
+              <a ui-sref="profile" > <i class="material-icons" style="font-size:64px;color:#ffffff;">account_circle</i> {{user.name}} </a>
+            </td>
           </tr>
         </table>
       </div>

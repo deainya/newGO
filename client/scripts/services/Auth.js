@@ -32,11 +32,11 @@ module.exports = function ($http, session) {
         });
     },
     logOut: function(){
-      return $http
-        .get('/api/logout')
-        .then(function(response){
+      return //$http
+        //.get('/api/logout')
+        //.then(function(response){
           session.destroy();
-        });
+        //});
     }
   }
 };

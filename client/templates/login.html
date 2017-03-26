@@ -3,12 +3,10 @@
     <label class="form-label" for="email">Email</label><br>
     <input class="form-input" name="email" type="email" placeholder="user@email.ru" required ng-model="user.email"/>
   </div>
-  <br><br>
   <div class="form-field">
     <label class="form-label" for="password">Пароль</label><br>
     <input class="form-input" name="password" type="password" required ng-model="user.password"/>
   </div>
-  <br><br>
   <div class="form-field">
     <input class="btn shadow" type="submit" value="Войти" ng-disabled="formLogin.$invalid" />
     &nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="register">Регистрация</a>

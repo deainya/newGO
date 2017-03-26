@@ -13,6 +13,7 @@ var localStorageFactory = require('./services/localStorage');
 var SocketFactory = require('./services/Socket');
 
 var activateCtrl = require('./controllers/Activate');
+var mainCtrl = require('./controllers/Main');
 var profileCtrl = require('./controllers/Profile');
 var usersCtrl = require('./controllers/Users');
 
@@ -47,8 +48,8 @@ angular
   })
   .state('main', {
     url: '/main',
-    templateUrl: 'templates/main.html'//,
-    //controller: 'profileCtrl'
+    templateUrl: 'templates/main.html',
+    controller: 'mainCtrl'
   })
   .state('users', {
     url: '/users',
@@ -68,6 +69,7 @@ angular
 .factory('socket', ['$rootScope', SocketFactory])
 
 .controller('activateCtrl', ['$http', '$rootScope', '$scope', '$state', '$stateParams', 'auth', 'toastr', activateCtrl])
+.controller('mainCtrl', ['$scope', 'socket', 'toastr', mainCtrl])
 .controller('profileCtrl', ['$rootScope', '$scope', '$state', 'auth', 'dataSource', 'Gravatar', 'toastr', profileCtrl])
 .controller('usersCtrl', ['$rootScope', '$scope', '$state', 'dataSource', usersCtrl])
 

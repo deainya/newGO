@@ -2,6 +2,7 @@
 module.exports = function ($rootScope, $scope, $state, dataSource) {
   dataSource.get('/users', {}).then(function(res) {
     $scope.users = res.data;
+    console.log($scope.users);
   });
 
   $scope.SendLetter = function(email, message){

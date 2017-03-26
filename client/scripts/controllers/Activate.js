@@ -7,8 +7,10 @@ module.exports = function ($http, $rootScope, $scope, $state, $stateParams, auth
   });
 
   $scope.Activate = function(credentials){
-    angular.extend(credentials, {city:$scope.point.city});
-    angular.extend(credentials, {tradepoint:$scope.point});
+    console.log($scope.point);
+
+    angular.extend(credentials, {city: $scope.point.city});
+    angular.extend(credentials, {tradepoint: $scope.point});
     angular.extend(credentials, {role: 1}); // партнёр
 
     console.log(credentials);

@@ -9,9 +9,9 @@ let mail        = require('./mail'); // to send email
 let mongo       = require('./mongo'); // get our mongo utils
 
 let socket      = require('./routes/socket.js');
-//let server      = require('http').Server(app);
-//let io          = require('socket.io')(server); // Hook socket.io into Express
-var io          = require('socket.io').listen(app);
+let server      = require('http').Server(app);
+let io          = require('socket.io')(server); // Hook socket.io into Express
+//var io          = require('socket.io').listen(app); // Fuck it!
 
 // Initialization            ==================================================
 let jsonParser  = bodyParser.json();

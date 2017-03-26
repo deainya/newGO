@@ -1,10 +1,14 @@
 // services/Session.js
 module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
   // Init data when service is loaded
-  var _user = localStorage.getItem('session.user'); //JSON.parse()
+  var _user = JSON.parse(localStorage.getItem('session.user'));
   var _accessToken = localStorage.getItem('session.accessToken');
   console.log(_user);
   console.log(_accessToken);
+
+  if (_user) { console.log("User exists"); }
+  if (_accessToken) { console.log("Token exists"); }
+
   if (_user && _accessToken) {
     console.log(jwtHelper.getTokenExpirationDate(_accessToken));
 

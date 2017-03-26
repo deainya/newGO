@@ -3,12 +3,14 @@ module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
   // Init data when service is loaded
   var _user = JSON.parse(localStorage.getItem('session.user'));
   var _accessToken = localStorage.getItem('session.accessToken');
-  console.log(_user);
-  console.log(_accessToken);
-  console.log(jwtHelper.getTokenExpirationDate(_accessToken));
-  if (_user && !jwtHelper.isTokenExpired(_accessToken)) {
+  console.log(_user + " " + _accessToken);
+  if (_user && _accessToken) {
+    console.log(jwtHelper.getTokenExpirationDate(_accessToken));
+
     $rootScope.user = _user;
     $rootScope.user = _accessToken;
+
+    console.log($rootScope.user.role + " " + $rootScope.user.city);
   }
 
   return {

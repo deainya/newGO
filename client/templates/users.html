@@ -14,10 +14,10 @@
     <table class="grid">
       <tbody>
         <tr>
-          <td width="25%">{{ u.name }} &nbsp;</td>
-          <td width="25%">{{ u.email }}&nbsp;</td>
-          <td width="25%" ng-show="u.role==0">{{ u.tradepoint.tp }} {{ u.tradepoint.tradepoint }} &nbsp;</td>
-          <td width="25%" ng-show="u.role==1">{{ u.tradepoint.wp }} {{ u.tradepoint.tradepoint }} &nbsp;</td>
+          <td width="25%">{{ u.name }}</td>
+          <td width="25%">{{ u.email }}</td>
+          <td width="25%" ng-show="u.role==0">{{ u.tradepoint.tp }}</td>
+          <td width="25%" ng-show="u.role==1">{{ u.tradepoint.wp }}</td>
           <td width="25%"> {{ u.role }} </td>
         </tr>
       </tbody>
@@ -27,34 +27,12 @@
     <table class="grid-sub">
       <tbody>
         <tr>
+          <td width="33%"> {{ u.city }} </td>
           <td width="33%"> {{ u.phone }} </td>
-          <td width="33%"> {{ u.tradepoint.name }} </td>
-          <td width="34%"> {{ u.tradepoint.address }} </td>
+          <td width="34%"> &nbsp; </td>
         </tr>
         <tr>
-          <td colspan="3" width="100%">Адрес: {{ u.tradepoint.address }} </td>
-        <tr>
-          <td colspan="3" width="100%">
-            <form class="formx" name="SendForm" ng-submit="SendLetter(u.email, u.message)"/>
-              <input class="formx-input" placeholder="Сообщение пользователю" id="message" ng-model="u.message"/>
-              <input class="btnx" type="submit" value="Отправить" />
-            </form>
-
-            <form class="formx" name="RoleForm" ng-submit="setRole(u.email, u.newrole)"/>
-              <label class="form-label" for="newrole">Новая роль:</label>
-              <select class="formx-input" id="newrole" ng-model="u.newrole" ng-init="u.newrole = '0'">
-                <option value="0">Консультант</option>
-                <option value="1">Продавец-партнёр</option>
-                <option value="2">Супервизор</option>
-                <option value="3">Администратор</option>
-              </select>
-              <input class="btnx" type="submit" value="Принять" />
-            </form>
-
-            <form class="formx" name="DeleteForm" ng-submit="DeleteUser(u.email, user.role)"/>
-              <input class="btnx" type="submit" value="Удалить" />
-            </form>
-          </td>
+          <td colspan="3" width="100%"> {{ u.tradepoint.tradepoint }} {{ u.tradepoint.name }} {{ u.tradepoint.address }} </td>
         </tr>
       </tbody>
     </table>

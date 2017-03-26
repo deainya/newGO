@@ -75,6 +75,8 @@ angular
   var _to = new Date(); _to.setHours(0, 0, 0, 0); _to.setDate(_to.getDate() + 1);
   $rootScope.filter = {from:_from, to:_to, city:false, status:'Любой'};
 
+  console.log($rootScope.filter.from);
+
   // Listen for state changes when using ui-router
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // Here we simply check if logged in but you can implement more complex logic that inspects the state to see if access is allowed or not

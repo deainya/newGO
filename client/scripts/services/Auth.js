@@ -32,7 +32,7 @@ module.exports = function ($http, session) {
         });
     },
     logOut: function(){
-      return //$http
+      //return $http
         //.get('/api/logout')
         //.then(function(response){
           session.destroy();

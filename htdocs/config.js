@@ -4,6 +4,7 @@
 
 module.exports = {
   port: process.env.port || 3005,
+  sckt: 8000,
   'secret': 'secretforrfbgoinitiative',
 
   //'smpts': 'smtps://deainru%40gmail.com:mail4deainru@smtp.gmail.com',

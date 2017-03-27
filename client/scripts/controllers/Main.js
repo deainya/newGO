@@ -17,7 +17,7 @@ module.exports = function ($scope, socket, toastr) {
       text: 'User ' + data.name + ' has joined.'
     });
     $scope.users.push(data.name);
-    toastr.alert(data.name, 'joined');
+    toastr.success(data.name, 'User has joined');
   });
 
   // add a message to the conversation when a user disconnects or leaves the room
@@ -26,7 +26,7 @@ module.exports = function ($scope, socket, toastr) {
       user: 'chatroom',
       text: 'User ' + data.name + ' has left.'
     });
-    toastr.alert(data.name, 'left');
+    toastr.info(data.name, 'User has left');
     var i, user;
     for (i = 0; i < $scope.users.length; i++) {
       user = $scope.users[i];

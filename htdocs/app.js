@@ -12,7 +12,7 @@ let socket      = require('./routes/socket.js');
 let server      = require('http').Server(app);
 let io          = require('socket.io')(server); // Hook socket.io into Express
 //var io          = require('socket.io').listen(app); // Fuck it!
-server.listen(3001);
+server.listen(config.sckt);
 
 // Initialization            ==================================================
 let jsonParser  = bodyParser.json();

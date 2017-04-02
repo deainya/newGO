@@ -26,9 +26,8 @@
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
-
   <div class="form-field">
-    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + " " + p.tradepoint as p.name for t in points">
+    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for t in points">
     </select>
   </div>
 

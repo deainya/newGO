@@ -28,9 +28,10 @@
     <select class="form-input" name="tradepoint" placeholder="Торговый центр" ng-model="user.tradepoint" ng-show="user.role==1" ng-change="getTradepoints(user.city, 2, user.tradepoint.tradepoint)">
       <option ng-repeat="p in points" ng-value="p.tradepoint">{{ p.tradepoint }} ({{ p.address }})</option>
     </select>
-
+  </div>
+  <div class="form-field" ng-show="_tp">
     <select class="form-input" name="tp" placeholder="Компания-партнёр" ng-model="user.tp" ng-show="user.role==1">
-      <option ng-repeat="p in points" ng-value="p.tp">{{ p.name }}</option>
+      <option ng-repeat="t in tps" ng-value="t.tp">{{ t.name }}</option>
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->

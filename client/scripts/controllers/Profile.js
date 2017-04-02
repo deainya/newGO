@@ -1,8 +1,15 @@
 // User profile controller
 module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravatar, toastr) {
   $scope.Login = function(credentials){
-    var i = $scope.points.IndexOf({"wp":credentials.code});
+    var i = $scope.points.IndexOf({"wp":credentials.wp});
+    var j = $scope.points.IndexOf({"tp":credentials.tp});
+
+    credentials.city = $rootScope.cities[credentials.cityCode].name;
+
+    console.log($scope.city[i]);
     console.log($scope.points[i]);
+    console.log($scope.tps[j]);
+
     //$rootScope.user.role
 
     /*auth.logIn(credentials,

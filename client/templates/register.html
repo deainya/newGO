@@ -27,11 +27,16 @@
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">
-    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for p in points">
+    <!--select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for p in points">
+    </select-->
+
+    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" >
+      <option ng-repeat="p in points" ng-value="p.wp">{{ p.wp }} {{ p.name }}</option>
     </select>
+
   </div>
 
-  <!--div class="cell">
+  <!--div class="cell"> <select size="5">
     <div class="form-input" ng-show="_tradepoints==true">
       Выберите место работы из списка:
       <div class="cell" ng-repeat="point in points">

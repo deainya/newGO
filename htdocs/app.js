@@ -39,6 +39,24 @@ app.get("/users", (req, res) => {
   });
 });
 
+app.get("/tradepoints", (req, res) => {
+  let city = req.query.city || {};
+  let role = req.query.role || {};
+
+  switch(role) {
+    case 0:
+      mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$wp", wp:{$first:"$wp"}, tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {
+        if(err) { res.sendStatus(400); } else { res.json( docs ); }
+      });
+    case 1:
+      mongo.find('tradepoints', {"city":city}, {"_id":false}).toArray((error, docs) => {
+        if(err) { res.sendStatus(400); } else { res.json( docs ); }
+      });
+    default: ;
+  }
+});
+
+
 // Socket.io Communication
 io.sockets.on('connection', socket);
 
@@ -48,7 +66,7 @@ require('./routes/auth')(app, apiRoutes); // auth routes
 // route to show welcome message
 apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
 require('./routes/tradepoints')(apiRoutes, jsonParser, mongo, mail); // tradepoints routes
-require('./routes/users')(apiRoutes, jsonParser, mongo, mail); // users routes
+//require('./routes/users')(apiRoutes, jsonParser, mongo, mail); // users routes
 //require('./routes/orders')(apiRoutes, jsonParser, Mongo, Mail); // orders routes
 
 apiRoutes.get("/tradepoints", (req, res) => {

@@ -64,8 +64,6 @@ app.get("/tradepoint/tp", (req, res) => {
   });
 });
 
-
-
 // Socket.io Communication
 io.sockets.on('connection', socket);
 
@@ -74,7 +72,6 @@ let apiRoutes = express.Router(); // get an instance of the router for api route
 require('./routes/auth')(app, apiRoutes); // auth routes
 // route to show welcome message
 apiRoutes.get('/', (req, res) => {  res.json({ message: 'rfbGO API' }); });
-//require('./routes/tradepoints')(apiRoutes, jsonParser, mongo, mail); // tradepoints routes
 require('./routes/users')(apiRoutes, jsonParser, mongo, mail); // users routes
 //require('./routes/orders')(apiRoutes, jsonParser, Mongo, Mail); // orders routes
 

@@ -37,6 +37,7 @@ module.exports = function ($log, $rootScope, jwtHelper, localStorage) {
       this.setUser(null);
       this.setAccessToken("");
       console.log("Session destroy");
+      console.log($rootScope.user);
     }
   }
 };

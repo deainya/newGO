@@ -13,17 +13,21 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     if (credentials.wp) {
       var i = $scope.points.map(function(x) { return x.wp; }).indexOf(credentials.wp);
       console.log($scope.points[i]);
+      credentials.tradepoint = $scope.points[i];
     }
     if (credentials.tp) {
       var j = $scope.tps.map(function(x) { return x.tp; }).indexOf(credentials.tp);
       console.log($scope.points);
       console.log($scope.tps[j]);
+      credentials.tradepoint = $scope.tps[j];
     }
     var city = $rootScope.cities[credentials.cityCode].name;
     console.log(city);
     //$rootScope.user.city = city;
     credentials.city = city;
     console.log(credentials.city);
+
+    console.log(credentials);
 
     /*auth.Register(credentials,
       function(){

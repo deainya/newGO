@@ -10,8 +10,8 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   };
 
   $scope.Register = function(credentials){
-    var i = $scope.points.map(function(x) { return x.wp; }).IndexOf(credentials.wp);
-    var j = $scope.tps.map(function(x) { return x.wp; }).IndexOf(credentials.tp);
+    var i = $scope.points.map(function(x) { return x.wp; }).indexOf(credentials.wp);
+    var j = $scope.tps.map(function(x) { return x.wp; }).indexOf(credentials.tp);
 
     credentials.city = $rootScope.cities[credentials.cityCode].name;
 

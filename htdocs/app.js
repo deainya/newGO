@@ -43,9 +43,7 @@ app.get("/tradepoints", (req, res) => {
   let city = req.query.city || {};
   let role = req.query.role || {};
 
-  console.log("ok");
-  console.log(city);
-  console.log(role);
+  console.log(req.query);
 
   switch(role) {
     case 0:

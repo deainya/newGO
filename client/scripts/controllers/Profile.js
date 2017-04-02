@@ -29,7 +29,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     if (c&&s) {
       $scope._tradepoint = true;
       if (s == 2) { $scope._tp = true; }
-      dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p}).then(function(res) {
+      dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p.tradepoint}).then(function(res) {
         $scope.points = res.data;
       });
     }

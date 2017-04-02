@@ -24,11 +24,12 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   //};
 
   $scope.getTradepoints = function(c, s, p){
-    $scope.points = [];
-    $scope._tradepoint = false; $scope._tp = false;
+    $scope._tradepoint = false;
+    $scope._tp = false;
+    if (s!=2) { $scope.points = []; }
     if (c&&s) {
       $scope._tradepoint = true;
-      if (s == 2) {
+      if (s==2) {
         $scope._tp = true;
         dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p}).then(function(res) {
           $scope.tps = res.data;

@@ -10,14 +10,20 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   };
 
   $scope.Register = function(credentials){
-    var i = $scope.points.map(function(x) { return x.wp; }).indexOf(credentials.wp);
-    var j = $scope.tps.map(function(x) { return x.wp; }).indexOf(credentials.tp);
-
+    if (credentials.wp) {
+      var i = $scope.points.map(function(x) { return x.wp; }).indexOf(credentials.wp);
+      console.log($scope.points);
+      console.log(i);
+    }
+    if (credentials.tp) {
+      var j = $scope.tps.map(function(x) { return x.wp; }).indexOf(credentials.tp);
+      console.log($scope.points);
+      console.log($scope.tps);
+      console.log(j);
+    }
     credentials.city = $rootScope.cities[credentials.cityCode].name;
-
+    $rootScope.user.city = credentials.city;
     console.log(credentials.city);
-    console.log($scope.points[i]);
-    console.log($scope.tps[j]);
 
     /*auth.Register(credentials,
       function(){

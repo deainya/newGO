@@ -21,7 +21,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     }
     var city = $rootScope.cities[credentials.cityCode].name;
     console.log(city);
-    $rootScope.user.city = city;
+    //$rootScope.user.city = city;
     credentials.city = city;
     console.log(credentials.city);
 

@@ -44,6 +44,8 @@ app.get("/tradepoints", (req, res) => {
   let city = req.query.city || {};
   let tradepoint = req.query.tradepoint || {};
 
+  console.log(req.query);
+
   switch(step) {
     case "0":
       mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$wp", wp:{$first:"$wp"}, tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {

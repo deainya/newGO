@@ -18,16 +18,16 @@
       <option value="Казань">Казань</option>
       <option value="Самара">Самара</option>
     </select-->
-    <select class="form-input" name="city" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints()">
+    <select class="form-input" name="city" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <div class="form-field">
-    <select class="form-input" name="role" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints()">
+    <select class="form-input" name="role" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">
-    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for t in points">
+    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for p in points">
     </select>
   </div>
 

@@ -40,16 +40,21 @@ app.get("/users", (req, res) => {
 });
 
 app.get("/tradepoints", (req, res) => {
+  let step = req.query.step || {};
   let city = req.query.city || {};
-  let role = req.query.role || {};
+  let tradepoint = req.query.tradepoint || {};
 
-  switch(role) {
+  switch(step) {
     case "0":
       mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$wp", wp:{$first:"$wp"}, tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {
         if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;
     case "1":
-      mongo.tradepoints().find({"city":city}, {"_id":false}).toArray((error, docs) => {
+      mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$tradepoint", tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {
+        if (error) { res.sendStatus(400); } else { res.json( docs ); }
+      }); break;
+    case "2":
+      mongo.tradepoints().find({"city":city, "tradepoint":tradepoint}, {"_id":false}).toArray((error, docs) => {
         if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;
     default: res.sendStatus(400);

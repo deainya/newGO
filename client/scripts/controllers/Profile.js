@@ -23,12 +23,13 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   //  $state.reload();
   //};
 
-  $scope.getTradepoints = function(c, r){
+  $scope.getTradepoints = function(c, s, p){
     $scope.points = [];
-    $scope._tradepoints = false;
-    if (c&&r) {
-      $scope._tradepoints = true;
-      dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, role: r}).then(function(res) {
+    $scope._tradepoint = false; $scope._tp = false;
+    if (c&&s) {
+      $scope._tradepoint = true;
+      if (s == 2) { $scope._tp = true; }
+      dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p}).then(function(res) {
         $scope.points = res.data;
       });
     }

@@ -2,7 +2,7 @@
 module.exports = function ($http, session) {
   return {
     isLoggedIn: function(){
-      return session.getUser() !== null;
+      return session.getUser() !== undefined;
     },
     Register: function(credentials, callback){
       return $http

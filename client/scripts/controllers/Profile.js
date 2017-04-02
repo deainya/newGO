@@ -1,6 +1,15 @@
 // User profile controller
 module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravatar, toastr) {
   $scope.Login = function(credentials){
+    auth.logIn(credentials,
+      function(){
+        if ($rootScope.user.role == 1) { $state.go('main'); } else { $state.go('profile'); }
+      }, function(data){
+        toastr.error('Указан неверный логин или пароль', 'Ой!');
+      });
+  };
+
+  $scope.Register = function(credentials){
     var i = $scope.points.IndexOf({"wp":credentials.wp});
     var j = $scope.points.IndexOf({"tp":credentials.tp});
 
@@ -10,23 +19,12 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     console.log($scope.points[i]);
     console.log($scope.tps[j]);
 
-    //$rootScope.user.role
-
-    /*auth.logIn(credentials,
-      function(){
-        if ($rootScope.user.role == 1) { $state.go('main'); } else { $state.go('profile'); }
-      }, function(data){
-        toastr.error('Указан неверный логин или пароль', 'Ой!');
-      });*/
-  };
-
-  $scope.Register = function(credentials){
-    auth.Register(credentials,
+    /*auth.Register(credentials,
       function(){
         $state.go('profile');
       }, function(data){
         toastr.error('Что-то пошло не так...', 'Ой!');
-      });
+      });*/
   };
 
   //$scope.setTradepoint = function(obj){

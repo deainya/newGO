@@ -205,7 +205,7 @@ Grid
   vertical-align: center;
 }
 .act:hover {
-  background-color: #ffe3dc;
+  background-color: #f099b9; /*#ffe3dc;*/
   cursor: pointer;
 }
 .opt {

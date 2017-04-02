@@ -34,6 +34,13 @@
         <tr>
           <td colspan="3" width="100%"> {{ u.tradepoint.tradepoint }} {{ u.tradepoint.name }} {{ u.tradepoint.address }} </td>
         </tr>
+        <tr>
+          <td colspan="3" width="100%">
+            <form class="form" name="DeleteForm" ng-submit="DeleteUser(u.email)"/>
+              <input class="btn bin" type="submit" value="Удалить" />
+            </form>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>

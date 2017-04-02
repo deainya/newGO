@@ -20,13 +20,12 @@ module.exports = function ($rootScope, $scope, $state, dataSource) {
       }
     });
   };
-
-  $scope.DeleteUser = function(email, role){
-    dataSource.set('/api/user/delete', {email: email, role: role}).then(function(res){
+*/
+  $scope.DeleteUser = function(email){
+    dataSource.set('/api/user/delete', {email: email}).then(function(res){
       if (res.data.success) {
         $state.reload();
       }
     });
   };
-*/
 };

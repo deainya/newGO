@@ -1,12 +1,16 @@
 // User profile controller
 module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravatar, toastr) {
   $scope.Login = function(credentials){
-    auth.logIn(credentials,
+    var i = $scope.points.IndexOf({"wp":credentials.code});
+    console.log($scope.points[i]);
+    //$rootScope.user.role
+
+    /*auth.logIn(credentials,
       function(){
         if ($rootScope.user.role == 1) { $state.go('main'); } else { $state.go('profile'); }
       }, function(data){
         toastr.error('Указан неверный логин или пароль', 'Ой!');
-      });
+      });*/
   };
 
   $scope.Register = function(credentials){

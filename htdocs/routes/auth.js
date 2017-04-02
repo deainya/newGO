@@ -44,15 +44,22 @@ module.exports = function(app, apiRoutes) {
       if (!req.body.email || !req.body.password) {
         return res.status(400).send({ success: false, message: 'Bad credentials' });
       }
-      var t = req.body.tradepoint || {};
+      var city = req.body.city;
+      var code = req.body.code;
+      var role = req.body.role;
+      switch(role) {
+        case "0": var tp = {"city":city, "wp":code}; break;
+        case "1": var tp = {"city":city, "tp":code}; break;
+        default: return res.status(400).send({ success: false, message: 'Bad credentials' });
+      }
       var user = new User({
-        email: req.body.email,
-        password: req.body.password,
-        name: req.body.name,
-        phone: req.body.phone,
-        city: req.body.city,
-        tradepoint: t,
-        role: req.body.role
+        "email": req.body.email,
+        "password": req.body.password,
+        "name": req.body.name,
+        "phone": req.body.phone,
+        "city": city,
+        "tradepoint": tp,
+        "role": role
       });
       console.log(user);
       user.save(function(err, result) {

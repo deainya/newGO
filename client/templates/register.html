@@ -21,15 +21,15 @@
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field" ng-show="_tradepoint">
-    <select class="form-input" name="tradepoint" placeholder="Рабочее место" ng-model="user.tradepoint" ng-show="user.role==0">
+    <select class="form-input" name="tradepoint" placeholder="Рабочее место" ng-model="user.code" ng-show="user.role==0">
       <option ng-repeat="p in points" ng-value="p.wp">{{ p.wp }} {{ p.tradepoint }}</option>
     </select>
-    <select class="form-input" name="tradepoint" placeholder="Торговый центр" ng-model="user.tradepoint" ng-show="user.role==1" ng-change="getTP(user.city, user.tradepoint)">
+    <select class="form-input" name="tradepoint" placeholder="Торговый центр" ng-model="user.point" ng-show="user.role==1" ng-change="getTP(user.city, user.point)">
       <option ng-repeat="p in points" ng-value="p.tradepoint">{{ p.tradepoint }} ({{ p.address }})</option>
     </select>
   </div>
   <div class="form-field" ng-show="_tp">
-    <select class="form-input" name="tp" placeholder="Компания-партнёр" ng-model="user.tp" ng-show="user.role==1">
+    <select class="form-input" name="tp" placeholder="Компания-партнёр" ng-model="user.code" ng-show="user.role==1">
       <option ng-repeat="t in tps" ng-value="t.tp">{{ t.name }}</option>
     </select>
   </div>

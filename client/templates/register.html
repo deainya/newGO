@@ -12,54 +12,22 @@
     <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ui-options="{clearOnBlur: false}" required ng-model="user.phone"/>
   </div>
   <div class="form-field">
-    <!--select class="form-input" name="city" ng-model="user.city" ng-init="user.city = 'Самара'">
-      <option value="Екатеринбург">Екатеринбург</option>
-      <option value="Нижний Тагил">Нижний Тагил</option>
-      <option value="Казань">Казань</option>
-      <option value="Самара">Самара</option>
-    </select-->
-    <select class="form-input" name="city" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints(user.city, user.role)">
+    <select class="form-input" name="city" placeholder="Город" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <div class="form-field">
-    <select class="form-input" name="role" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints(user.city, user.role)">
+    <select class="form-input" name="role" placeholder="Роль" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
-  <div class="form-field">
-    <!--select class="form-input" name="tradepoint" ng-model="user.tradepoint" ng-options="p.wp + ' ' + p.tradepoint as p.name for p in points">
-    </select-->
-
-    <select class="form-input" name="tradepoint" ng-model="user.tradepoint" >
-      <option ng-repeat="p in points" ng-value="p.wp">{{ p.wp }} {{ p.name }}</option>
+  <div class="form-field" ng-show="_tradepoints">
+    <select class="form-input" name="tradepoint" placeholder="Рабочее место" ng-model="user.tradepoint" ng-show="user.role==roles[0].id">
+      <option ng-repeat="p in points" ng-value="p.wp">{{ p.wp }} {{ p.tradepoint }}</option>
     </select>
-
+    <select class="form-input" name="tradepoint" placeholder="Компания-партнёр" ng-model="user.tradepoint" ng-show="user.role==roles[1].id">
+      <option ng-repeat="p in points" ng-value="p.tp">{{ p.name }} {{ p.address }}</option>
+    </select>
   </div>
-
-  <!--div class="cell"> <select size="5">
-    <div class="form-input" ng-show="_tradepoints==true">
-      Выберите место работы из списка:
-      <div class="cell" ng-repeat="point in points">
-        <div class="act" ng-click="setTradepoint(point)">
-          <table class="grid"><tbody><tr>
-            <td>
-              <p ng-show="user.role=='0'">{{point.wp}}</p>
-              <p ng-show="user.role=='1'">{{point.name}}</p>
-              <p class="comment">ТЦ {{point.tradepoint}}, {{point.address}}</p>
-            <td>
-          </tr></tbody></table>
-        </div>
-      </div>
-      <br>
-    </div>
-    <div class="form-input" ng-show="_tradepoints_set">
-      Выбрано место работы:
-      <p>{{user.tradepoint.name}}</p>
-      <p class="comment">ТЦ {{user.tradepoint.tradepoint}}, {{user.tradepoint.address}}</p>
-    </div>
-    <label class="btn bin shadow" ng-hide="_tradepoints==true" ng-click="getTradepoints()">Указать место работы</label>
-    <label class="btn bin shadow" ng-show="_tradepoints==true" ng-click="_tradepoints=false">Отмена</label>
-  </div-->
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->
   <div class="form-field">
     <input class="btn shadow" type="submit" value="Зарегистрироваться" ng-disabled="formRegister.$invalid" />

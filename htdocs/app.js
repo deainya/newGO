@@ -43,21 +43,16 @@ app.get("/tradepoints", (req, res) => {
   let city = req.query.city || {};
   let role = req.query.role || {};
 
-  console.log(req.query);
-
   switch(role) {
     case "0":
       mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$wp", wp:{$first:"$wp"}, tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {
-        console.log("ok0");
-        if(error) { res.sendStatus(400); } else { res.json( docs ); }
+        if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;
     case "1":
-      //mongo.find('tradepoints', {"city":city}, {"_id":false}).toArray((error, docs) => {
       mongo.tradepoints().find({"city":city}, {"_id":false}).toArray((error, docs) => {
-        console.log("ok1");
-        if(error) { res.sendStatus(400); } else { res.json( docs ); }
+        if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;
-    default: ;
+    default: res.sendStatus(400);
   }
 });
 

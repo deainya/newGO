@@ -23,24 +23,23 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
   //  $state.reload();
   //};
 
-  $scope.getTradepoints = function(c, s, p){
+  $scope.getTradepoint = function(city, role){
     $scope._tradepoint = false;
-    $scope._tp = false;
-    if (s!=2) { $scope.points = []; $scope.tps = []; }
-    if (c&&s) {
+    if (city&&role) {
       $scope._tradepoint = true;
-      if (s==2) {
-        $scope._tp = true;
-        dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p}).then(function(res) {
-          $scope.tps = res.data;
-          console.log($scope.tps);
-        });
-      } else {
-        dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, step: s, tradepoint: p}).then(function(res) {
-          $scope.points = res.data;
-          console.log($scope.points);
-        });
-      }
+      dataSource.get('/tradepoint', {"city": $rootScope.cities[c].name, "role": role}).then(function(res) {
+        $scope.points = res.data;
+      });
+    }
+  };
+
+  $scope.getTP = function(city, tp){
+    $scope._tp = false;
+    if (tp) {
+      $scope._tp = true;
+      dataSource.get('/tradepoint/tp', {"city": $rootScope.cities[c].name, "tp": tp}).then(function(res) {
+        $scope.tps = res.data;
+      });
     }
   };
 

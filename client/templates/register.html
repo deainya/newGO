@@ -12,11 +12,11 @@
     <input class="form-input" name="phone" type="tel" ui-mask="+7 (999) 999-99-99" ui-options="{clearOnBlur: false}" required ng-model="user.phone"/>
   </div>
   <div class="form-field">
-    <select class="form-input" name="city" placeholder="Город" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints(user.city, user.role, '')">
+    <select class="form-input" name="city" placeholder="Город" ng-model="user.city" ng-options="c.id as c.name for c in cities" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <div class="form-field">
-    <select class="form-input" name="role" placeholder="Роль" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints(user.city, user.role, '')">
+    <select class="form-input" name="role" placeholder="Роль" ng-model="user.role" ng-options="r.id as r.name for r in roles" ng-change="getTradepoints(user.city, user.role)">
     </select>
   </div>
   <!--Кнопка выбора места работы / торговой точки в зависимости от города-->

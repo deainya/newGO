@@ -27,7 +27,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     $scope._tradepoint = false;
     if (city&&role) {
       $scope._tradepoint = true;
-      dataSource.get('/tradepoint', {"city": $rootScope.cities[c].name, "role": role}).then(function(res) {
+      dataSource.get('/tradepoint', {"city": $rootScope.cities[city].name, "role": role}).then(function(res) {
         $scope.points = res.data;
       });
     }
@@ -37,7 +37,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     $scope._tp = false;
     if (tp) {
       $scope._tp = true;
-      dataSource.get('/tradepoint/tp', {"city": $rootScope.cities[c].name, "tp": tp}).then(function(res) {
+      dataSource.get('/tradepoint/tp', {"city": $rootScope.cities[city].name, "tp": tp}).then(function(res) {
         $scope.tps = res.data;
       });
     }

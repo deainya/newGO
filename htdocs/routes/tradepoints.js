@@ -17,7 +17,7 @@ module.exports = function(apiRoutes, jsonParser, mongo, mail) {
         });
       default: ;
     }
-  }
+  });
 
 
 

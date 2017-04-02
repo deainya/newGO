@@ -29,7 +29,7 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
     console.log({city: $rootScope.cities[c].name, role: r});
     dataSource.get('/tradepoints', {city: $rootScope.cities[c].name, role: r}).then(function(res) {
       $scope.points = res.data;
-      console.log(points);
+      console.log($scope.points);
       console.log("ok");
     });
   };

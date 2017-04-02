@@ -44,13 +44,14 @@ module.exports = function(app, apiRoutes) {
       if (!req.body.email || !req.body.password) {
         return res.status(400).send({ success: false, message: 'Bad credentials' });
       }
+      var t = req.body.tradepoint || {};
       var user = new User({
         email: req.body.email,
         password: req.body.password,
         name: req.body.name,
         phone: req.body.phone,
         city: req.body.city,
-        tradepoint: req.body.tradepoint,
+        tradepoint: t,
         role: req.body.role
       });
       console.log(user);

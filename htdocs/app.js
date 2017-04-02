@@ -55,7 +55,7 @@ app.get("/tradepoints", (req, res) => {
       mongo.tradepoints().aggregate([{$match : {"city":city}}, {$group : { _id : "$tradepoint", tradepoint:{$first:"$tradepoint"}, address:{$first:"$address"}, city:{$first:"$city"}}}]).toArray((error, docs) => {
         if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;
-    case "2":
+    case "10":
       mongo.tradepoints().find({"city":city, "tradepoint":tradepoint}, {"_id":false}).toArray((error, docs) => {
         if (error) { res.sendStatus(400); } else { res.json( docs ); }
       }); break;

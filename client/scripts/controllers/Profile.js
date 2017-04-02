@@ -20,15 +20,12 @@ module.exports = function ($rootScope, $scope, $state, auth, dataSource, Gravata
       var j = $scope.tps.map(function(x) { return x.tp; }).indexOf(credentials.tp);
       credentials.point = {"tp":credentials.tp, "name":$scope.tps[j].name, "wp":$scope.tps[j].wp, "tradepoint":$scope.tps[j].tradepoint, "address":$scope.tps[j].address};
     }
-    console.log(credentials);
-    console.log( $rootScope.user);
-
-    /*auth.Register(credentials,
+    auth.Register(credentials,
       function(){
         $state.go('profile');
       }, function(data){
         toastr.error('Что-то пошло не так...', 'Ой!');
-      });*/
+      });
   };
 
   //$scope.setTradepoint = function(obj){
